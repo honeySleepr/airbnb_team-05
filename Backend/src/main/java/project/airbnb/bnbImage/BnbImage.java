@@ -1,4 +1,4 @@
-package project.airbnb.reservation;
+package project.airbnb.bnbImage;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,13 +11,15 @@ import javax.persistence.ManyToOne;
 import project.airbnb.bnb.Bnb;
 
 @Entity
-public class Reservation {
+public class BnbImage {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "reservation_id")
+	@Column(name = "bnb_image_id")
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "bnb_id")
 	private Bnb bnb;
+
+	private String imageUrl;
 }
