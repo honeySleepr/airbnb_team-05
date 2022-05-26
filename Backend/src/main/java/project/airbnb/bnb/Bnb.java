@@ -13,10 +13,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import project.airbnb.bnbImage.BnbImage;
 
 @Entity
+@Getter // 임시 생성 (BC)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 

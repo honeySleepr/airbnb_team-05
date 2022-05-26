@@ -42,4 +42,19 @@ public class Reservation {
 
 	private long totalFee;
 
+	public Long getId() {
+		return id;
+	}
+
+	public Bnb getBnb() {
+		return bnb;
+	}
+
+	public LocalDate getCheckIn() {
+		return checkIn;
+	}
+
+	public LocalDate getCheckOut() {
+		return checkOut;
+	}
 }

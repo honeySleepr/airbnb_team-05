@@ -8,9 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import lombok.Getter;
 import project.airbnb.bnb.Bnb;
 
 @Entity
+@Getter // 임시 생성 (BC)
 public class BnbImage {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
