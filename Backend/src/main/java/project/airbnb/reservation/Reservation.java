@@ -1,5 +1,6 @@
 package project.airbnb.reservation;
 
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,10 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import project.airbnb.bnb.Bnb;
 import project.airbnb.member.Member;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Reservation {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +27,19 @@ public class Reservation {
 	@JoinColumn(name = "member_id")
 	private Member member;
 
-
 	// 다대일 단방향 Reservation -> Bnb
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "bnb_id")
 	private Bnb bnb;
 
+	// Todo : Embedded를 쓰는게 나을까, 너무 남발하지 않는게 좋을까?
+	private LocalDate checkIn;
+	private LocalDate checkOut;
 
+	private int adults;
+	private int children;
+	private int infants;
+
+	private long totalFee;
 
 }
