@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import project.airbnb.bnb.Bnb;
+import project.airbnb.member.Member;
 
 @Entity
 public class Reservation {
@@ -17,7 +18,17 @@ public class Reservation {
 	@Column(name = "reservation_id")
 	private Long id;
 
+	// 다대일 양방향 Reservation <-> Member
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "member_id")
+	private Member member;
+
+
+	// 다대일 단방향 Reservation -> Bnb
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "bnb_id")
 	private Bnb bnb;
+
+
+
 }

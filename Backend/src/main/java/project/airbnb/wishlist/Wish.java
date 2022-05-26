@@ -2,7 +2,7 @@ package project.airbnb.wishlist;
 
 import javax.persistence.GenerationType;
 import project.airbnb.bnb.Bnb;
-import project.airbnb.user.Member;
+import project.airbnb.member.Member;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
