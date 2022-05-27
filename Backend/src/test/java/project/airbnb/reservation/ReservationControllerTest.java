@@ -48,7 +48,7 @@ class ReservationControllerTest {
 			BnbType.GUESTHOUSE, "BC", 4,
 			new Time(LocalTime.of(16, 30), LocalTime.of(11, 00)),
 			new BnbOption(1, 2, 1),
-			"테스트 bnb 설명", 50_000);
+			"테스트 bnb 설명", 50_000L);
 		bnb.saveBnbImage(bnbImage);
 		bnbRepository.save(bnb);
 
@@ -57,7 +57,7 @@ class ReservationControllerTest {
 		Reservation reservation = new Reservation(null, member, null,
 			LocalDate.of(2022, 1, 1),
 			LocalDate.of(2022, 1, 6),
-			2, 2, 0, 800_000);
+			2, 2, 0, 800_000L);
 		reservation.setBnb(bnb);
 		reservation.saveMember(member);
 
@@ -72,7 +72,7 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		List<BriefReservationDto> list = reservationController.list();
+		List<SimpleReservationDto> list = reservationController.list();
 		System.out.println("=================================");
 		list.forEach(System.out::println);
 		System.out.println("=================================");

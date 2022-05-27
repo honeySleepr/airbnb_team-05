@@ -1,33 +1,21 @@
 package project.airbnb.reservation;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import javax.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ReservationController {
 
-	private ReservationRepository reservationRepository;
+	private ReservationService reservationService;
 
-	public ReservationController(ReservationRepository reservationRepository) {
-		this.reservationRepository = reservationRepository;
+	public ReservationController(ReservationService reservationService) {
+		this.reservationService = reservationService;
 	}
 
-	@GetMapping("/")
-	public List<BriefReservationDto> list() {
-
-		List<Reservation> all = reservationRepository.findAll();
-		List<BriefReservationDto> collect = all.stream()
-			.map(BriefReservationDto::new)
-			.collect(Collectors.toList());
-
-		return collect;
+	@GetMapping("/api/reservation")
+	public List<SimpleReservationDto> list() {
+		return reservationService.list();
 	}
 
-	@PostConstruct
-	public void insertDummyData() {
-
-	}
 }

@@ -42,7 +42,7 @@ public class Bnb {
 
 	private String host;
 
-	private int maxGuestNumber;
+	private Integer maxGuestNumber;
 
 	@Embedded
 	private Time time;
@@ -52,7 +52,7 @@ public class Bnb {
 
 	private String description;
 
-	private long fee;
+	private Long fee;
 
 	public void saveBnbImage(BnbImage image) {
 		image.setBnb(this);

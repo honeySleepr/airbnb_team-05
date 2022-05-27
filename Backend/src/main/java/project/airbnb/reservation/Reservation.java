@@ -42,7 +42,7 @@ public class Reservation {
 	private int children;
 	private int infants;
 
-	private long totalFee;
+	private Long totalFee;
 
 	public Long getId() {
 		return id;
