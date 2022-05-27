@@ -13,6 +13,7 @@ final class AdvertisingCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        appendSubView()
         advertisingLayout()
     }
     
