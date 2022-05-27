@@ -9,31 +9,22 @@ import UIKit
 
 struct HomeViewLayout {
     
-    private let section: Int
+    private let sectionIndex: Int
     
-    init(section: Int) {
-        self.section = section
+    init(sectionIndex: Int) {
+        self.sectionIndex = sectionIndex
     }
     
-    func createLayout() -> NSCollectionLayoutSection {
-        switch section {
-        case 0:
-            return HomeZeroLayoutSection().createLayout()
-        case 1:
-            return HomeFirstLayoutSection().createLayout()
-        default:
-            return HomeDefaultLayoutSection().createLayout()
-        }
-    }
 }
 
 struct HomeZeroLayoutSection {
     
     func createLayout() -> NSCollectionLayoutSection? {
+        let itemFractionalWidthFraction = 1.0
         let itemInset: CGFloat = 0
         let groupFractionalHeightFraction = 1.0 / 2.0
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(itemFractionalWidthFraction),
                                               heightDimension: .fractionalHeight(1))
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -48,7 +39,6 @@ struct HomeZeroLayoutSection {
         section.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset,
                                                         bottom: itemInset, trailing: itemInset)
         
-        
         return section
     }
 }
@@ -56,9 +46,10 @@ struct HomeZeroLayoutSection {
 struct HomeFirstLayoutSection {
     
     func createLayout() -> NSCollectionLayoutSection? {
+        let itemFractionalWidthFraction = 0.8
         let itemInset: CGFloat = 2.5
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8),
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(itemFractionalWidthFraction),
                                               heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: 16,
@@ -87,9 +78,10 @@ struct HomeFirstLayoutSection {
 struct HomeDefaultLayoutSecion {
     
     func createLayout() -> NSCollectionLayoutSection? {
+        let itemFractionalWidthFraction = 0.8
         let itemInset: CGFloat = 2.5
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8),
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(itemFractionalWidthFraction),
                                               heightDimension: .fractionalHeight(1))
         let item =  NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 28, leading: 16, bottom: 24, trailing: 0)
