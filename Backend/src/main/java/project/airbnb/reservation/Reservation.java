@@ -10,12 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import project.airbnb.bnb.Bnb;
 import project.airbnb.member.Member;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor // 임시 생성 (BC)
 public class Reservation {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,5 +58,14 @@ public class Reservation {
 
 	public LocalDate getCheckOut() {
 		return checkOut;
+	}
+
+	public void setBnb(Bnb bnb) {
+		this.bnb = bnb;
+	}
+
+	public void saveMember(Member member) {
+		this.member = member;
+		member.getReservations().add(this);
 	}
 }
