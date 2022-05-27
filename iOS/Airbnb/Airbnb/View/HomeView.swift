@@ -12,7 +12,7 @@ final class HomeView: UIView {
     override init(frame: CGRect ){
         super.init(frame: frame)
         homeViewConfiguration()
-//        setUpUIConfiguration()
+        //        setUpUIConfiguration()
         
     }
     
@@ -21,9 +21,9 @@ final class HomeView: UIView {
         super.init(coder: coder)
     }
     
-    private var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero,
-                                              collectionViewLayout: UICollectionViewFlowLayout())
+                                              collectionViewLayout: Self.getCollectionViewLayout())
         collectionView.isScrollEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
@@ -49,9 +49,17 @@ final class HomeView: UIView {
         ])
     }
     
-    private func setUpUIConfiguration() {
-        
+    static func getCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout { (sectionIndex, env) -> NSCollectionLayoutSection? in
+            switch sectionIndex {
+            case 0:
+                return HomeZeroLayoutSection().createLayout()
+            case 1:
+                return HomeFirstLayoutSection().createLayout()
+            default:
+                return HomeDefaultLayoutSecion().createLayout()
+            }
+        }
     }
-    
     
 }
