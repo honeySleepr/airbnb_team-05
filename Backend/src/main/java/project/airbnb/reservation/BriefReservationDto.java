@@ -2,9 +2,11 @@ package project.airbnb.reservation;
 
 import java.time.LocalDate;
 import lombok.Getter;
+import lombok.ToString;
 import project.airbnb.bnb.Address;
 
 @Getter
+@ToString
 public class BriefReservationDto {
 
 	private Long reservationId;
