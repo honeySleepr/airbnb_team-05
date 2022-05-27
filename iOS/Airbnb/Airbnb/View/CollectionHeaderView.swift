@@ -34,6 +34,10 @@ class CollectionHeaderView: UICollectionReusableView {
         title.text = text
     }
     
+    func setHeaderFontSize(size: CGFloat) {
+        title.font = .systemFont(ofSize: size, weight: .init(rawValue: 400))
+    }
+    
     func configuration() {
         self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
