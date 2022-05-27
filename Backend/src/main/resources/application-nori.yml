@@ -4,6 +4,7 @@ spring:
     url: jdbc:mysql://localhost:3306/airbnb
     username: nori
     password: 123456
+
   jpa:
     hibernate:
       ddl-auto: create
@@ -11,6 +12,12 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 100
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:sql/data.sql
 
 logging:
   level:
