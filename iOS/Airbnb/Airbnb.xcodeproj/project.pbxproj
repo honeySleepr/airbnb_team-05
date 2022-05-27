@@ -11,6 +11,9 @@
 		5B06C2DE283F4C92009F4CD4 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */; };
 		5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */; };
 		5B06C2E4284067F7009F4CD4 /* HomeViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E3284067F7009F4CD4 /* HomeViewLayout.swift */; };
+		5B06C2E7284081EC009F4CD4 /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */; };
+		5B06C2EA2840896C009F4CD4 /* NearbyDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */; };
+		5B06C2EC2840899B009F4CD4 /* LivingSpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */; };
 		5BDDCC5B283C807300632526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5A283C807300632526 /* AppDelegate.swift */; };
 		5BDDCC5D283C807300632526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5C283C807300632526 /* SceneDelegate.swift */; };
 		5BDDCC5F283C807300632526 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5E283C807300632526 /* WishlistViewController.swift */; };
@@ -46,6 +49,9 @@
 		5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCell.swift; sourceTree = "<group>"; };
 		5B06C2E3284067F7009F4CD4 /* HomeViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewLayout.swift; sourceTree = "<group>"; };
+		5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewDataSource.swift; sourceTree = "<group>"; };
+		5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationCell.swift; sourceTree = "<group>"; };
+		5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingSpotCell.swift; sourceTree = "<group>"; };
 		5BDDCC57283C807300632526 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDDCC5A283C807300632526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BDDCC5C283C807300632526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,25 @@
 				5B06C2E3284067F7009F4CD4 /* HomeViewLayout.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		5B06C2E5284081D1009F4CD4 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5B06C2E8284088C0009F4CD4 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				5BDDCC92283C9D9800632526 /* HomeView.swift */,
+				5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */,
+				5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */,
+				5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		5BDDCC4E283C807300632526 = {
@@ -184,10 +209,10 @@
 		5BDDCC8C283C917400632526 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B06C2E2284067D9009F4CD4 /* Utility */,
 				5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */,
-				5BDDCC92283C9D9800632526 /* HomeView.swift */,
-				5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */,
+				5B06C2E5284081D1009F4CD4 /* DataSource */,
+				5B06C2E2284067D9009F4CD4 /* Utility */,
+				5B06C2E8284088C0009F4CD4 /* SearchView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,12 +358,15 @@
 			files = (
 				5BDDCC91283C983700632526 /* ReservationViewController.swift in Sources */,
 				5BDDCC5F283C807300632526 /* WishlistViewController.swift in Sources */,
+				5B06C2EC2840899B009F4CD4 /* LivingSpotCell.swift in Sources */,
 				5BDDCC5B283C807300632526 /* AppDelegate.swift in Sources */,
 				5BDDCC8F283C981200632526 /* SearchViewController.swift in Sources */,
 				5B06C2D9283F189A009F4CD4 /* TabBarController.swift in Sources */,
+				5B06C2E7284081EC009F4CD4 /* SearchViewDataSource.swift in Sources */,
 				5B06C2E4284067F7009F4CD4 /* HomeViewLayout.swift in Sources */,
 				5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */,
 				5B06C2DE283F4C92009F4CD4 /* CollectionHeaderView.swift in Sources */,
+				5B06C2EA2840896C009F4CD4 /* NearbyDestinationCell.swift in Sources */,
 				5BDDCC93283C9D9800632526 /* HomeView.swift in Sources */,
 				5BDDCC5D283C807300632526 /* SceneDelegate.swift in Sources */,
 			);
