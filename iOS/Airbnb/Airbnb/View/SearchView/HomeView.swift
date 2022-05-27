@@ -12,7 +12,7 @@ final class HomeView: UIView {
     override init(frame: CGRect ){
         super.init(frame: frame)
         homeViewConfiguration()
-        //        setUpUIConfiguration()
+        
         
     }
     
@@ -30,7 +30,12 @@ final class HomeView: UIView {
         collectionView.clipsToBounds = true
         
         collectionView.register(AdvertisingCell.self, forCellWithReuseIdentifier: AdvertisingCell.identifier)
-        
+        collectionView.register(NearbyDestinationCell.self, forCellWithReuseIdentifier: NearbyDestinationCell.identifier)
+        collectionView.register(LivingSpotCell.self, forCellWithReuseIdentifier: LivingSpotCell.identifier)
+        collectionView.register(CollectionHeaderView.self,
+                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                        withReuseIdentifier: CollectionHeaderView.identifier)
+                collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
