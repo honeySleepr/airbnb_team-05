@@ -13,10 +13,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import project.airbnb.bnbImage.BnbImage;
 
 @Entity
+@Getter // 임시 생성 (BC)
+@AllArgsConstructor // 임시 생성 (BC)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 
@@ -38,7 +42,7 @@ public class Bnb {
 
 	private String host;
 
-	private int maxGuestNumber;
+	private Integer maxGuestNumber;
 
 	@Embedded
 	private Time time;
@@ -48,6 +52,12 @@ public class Bnb {
 
 	private String description;
 
-	private long fee;
+	private Long fee;
+
+	public void saveBnbImage(BnbImage image) {
+		image.setBnb(this);
+		images.add(image);
+	}
+
 
 }
