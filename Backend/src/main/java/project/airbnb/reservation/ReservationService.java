@@ -13,10 +13,10 @@ public class ReservationService {
 		this.reservationRepository = reservationRepository;
 	}
 
-	public List<SimpleReservationDto> list() {
+	public List<ShortReservationDto> list() {
 
 		List<Reservation> reservations = reservationRepository.findAll();
 
-		return reservations.stream().map(SimpleReservationDto::new).collect(Collectors.toList());
+		return reservations.stream().map(ShortReservationDto::new).collect(Collectors.toList());
 	}
 }

@@ -72,7 +72,7 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		List<SimpleReservationDto> list = reservationController.list();
+		List<ShortReservationDto> list = reservationController.list();
 
 		// then
 		assertThat(list.get(0).getBnbName()).isEqualTo("name1");

@@ -7,7 +7,7 @@ import project.airbnb.bnb.Address;
 
 @Getter
 @ToString
-public class SimpleReservationDto {
+public class ShortReservationDto {
 
 	private Long reservationId;
 	private String bnbName;
@@ -16,7 +16,7 @@ public class SimpleReservationDto {
 	private LocalDate checkOut;
 	private Address address;
 
-	public SimpleReservationDto(Reservation reservation) {
+	public ShortReservationDto(Reservation reservation) {
 		this.reservationId = reservation.getId();
 		this.bnbName = reservation.getBnb().getName();
 

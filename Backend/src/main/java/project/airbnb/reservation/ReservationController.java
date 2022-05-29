@@ -12,8 +12,12 @@ public class ReservationController {
 	private ReservationService reservationService;
 
 	@GetMapping("/api/reservations")
-	public List<SimpleReservationDto> list() {
+	public List<ShortReservationDto> list() {
 		return reservationService.list();
 	}
 
+	@GetMapping("/api/reservations/{id}")
+	public List<ShortReservationDto> list() {
+		return reservationService.list();
+	}
 }
