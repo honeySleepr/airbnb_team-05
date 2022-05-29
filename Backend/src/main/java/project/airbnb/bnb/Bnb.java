@@ -52,8 +52,7 @@ public class Bnb {
 	private int reviewCount;
 
 	public void saveBnbImage(BnbImage image) {
-		image.setBnb(this);
+		image.saveBnb(this);
 		images.add(image);
 	}
-
 }

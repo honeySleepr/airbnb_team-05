@@ -17,8 +17,6 @@ public class ReservationService {
 
 		List<Reservation> reservations = reservationRepository.findAll();
 
-		return reservations.stream()
-			.map(SimpleReservationDto::new)
-			.collect(Collectors.toList());
+		return reservations.stream().map(SimpleReservationDto::new).collect(Collectors.toList());
 	}
 }

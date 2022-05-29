@@ -1,7 +1,7 @@
 package project.airbnb.reservation;
 
-import java.time.LocalDate;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,13 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import project.airbnb.bnb.Bnb;
 import project.airbnb.member.Member;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor // 임시 생성 (BC)
+@AllArgsConstructor
+@Getter
 public class Reservation {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,33 +36,15 @@ public class Reservation {
 	@JoinColumn(name = "bnb_id")
 	private Bnb bnb;
 
-	// Todo : Embedded를 쓰는게 나을까, 너무 남발하지 않는게 좋을까?
-	private LocalDate checkIn;
-	private LocalDate checkOut;
+	@Embedded
+	private BookedSchedule bookedSchedule;
 
-	private int adults;
-	private int children;
-	private int infants;
+	@Embedded
+	private Headcount headcount;
 
 	private Long totalFee;
 
-	public Long getId() {
-		return id;
-	}
-
-	public Bnb getBnb() {
-		return bnb;
-	}
-
-	public LocalDate getCheckIn() {
-		return checkIn;
-	}
-
-	public LocalDate getCheckOut() {
-		return checkOut;
-	}
-
-	public void setBnb(Bnb bnb) {
+	public void saveBnb(Bnb bnb) {
 		this.bnb = bnb;
 	}
 

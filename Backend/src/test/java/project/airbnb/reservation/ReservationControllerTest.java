@@ -55,10 +55,10 @@ class ReservationControllerTest {
 		Member member = new Member(null, new ArrayList<>());
 
 		Reservation reservation = new Reservation(null, member, null,
-			LocalDate.of(2022, 1, 1),
-			LocalDate.of(2022, 1, 6),
-			2, 2, 0, 800_000L);
-		reservation.setBnb(bnb);
+			new BookedSchedule(LocalDate.of(2022, 1, 1),
+				LocalDate.of(2022, 1, 6)),
+			new Headcount(2, 2, 0), 800_000L);
+		reservation.saveBnb(bnb);
 		reservation.saveMember(member);
 
 		reservationRepository.save(reservation);
@@ -67,15 +67,12 @@ class ReservationControllerTest {
 	}
 
 	@Test
-	@DisplayName("회원이 저장되나")
+	@DisplayName("Entity 들이 서로 잘 연결되는지 확인하기 위한 임시 테스트입니다")
 	public void saveMember() {
 		// given
 
 		// when
 		List<SimpleReservationDto> list = reservationController.list();
-		System.out.println("=================================");
-		list.forEach(System.out::println);
-		System.out.println("=================================");
 
 		// then
 		assertThat(list.get(0).getBnbName()).isEqualTo("name1");

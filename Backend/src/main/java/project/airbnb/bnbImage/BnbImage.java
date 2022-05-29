@@ -30,7 +30,7 @@ public class BnbImage {
 
 	private String imageUrl;
 
-	public void setBnb(Bnb bnb) {
+	public void saveBnb(Bnb bnb) {
 		this.bnb = bnb;
 	}
 

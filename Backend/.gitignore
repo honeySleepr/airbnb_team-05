@@ -215,4 +215,5 @@ gradle-app.setting
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java,macos,git,gradle
+/src/main/resources/banner.txt
 /src/main/resources/application-secret.yml
