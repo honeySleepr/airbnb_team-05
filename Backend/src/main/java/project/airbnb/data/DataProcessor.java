@@ -28,7 +28,7 @@ import project.airbnb.bnb.Bnb;
 import project.airbnb.bnb.BnbOption;
 import project.airbnb.bnb.BnbRepository;
 import project.airbnb.bnb.BnbType;
-import project.airbnb.bnb.Time;
+import project.airbnb.bnb.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 
 @Component
@@ -53,12 +53,14 @@ public class DataProcessor {
 
 	@PostConstruct
 	public void action() {
-		try {
-			saveDummyBnb();
-		} catch (IOException e) {
-			log.debug("파일 경로 확인. 지정 경로 : {}", RESOURCE_PATH);
-			e.printStackTrace();
-		}
+		// 필요 시에만 사용하려고 만든 것
+		//		try {
+		//			createXYCsv();
+		//			saveDummyBnb();
+		//		} catch (IOException e) {
+		//			log.debug("파일 경로 확인. 지정 경로 : {}", RESOURCE_PATH);
+		//			e.printStackTrace();
+		//		}
 	}
 
 	// Naver API를 이용해 주소를 위/경도로 변환하여 CSV 파일에 저장한다
@@ -137,16 +139,16 @@ public class DataProcessor {
 			// 저장된 값은 사용하고, 나머지 값은 랜덤하게 돌린다.
 			// TODO: 위도, 경도는 어떻게 저장하는게 좋을지 상의하기
 			Bnb bnb = new Bnb(null, new ArrayList<>(), row.getCell(3).getStringCellValue(),
-				3 + (Math.round(random.nextInt(21) * 0.1 * 10) / 10d), random.nextInt(1000),
 				new Address("한국", row.getCell(1).getStringCellValue(),
 					row.getCell(2).getStringCellValue(),
 					row.getCell(4).getStringCellValue()),
-				BnbType.values()[random.nextInt(3)], "BC",
-				2 + random.nextInt(3),
-				new Time(LocalTime.of(15, 0), LocalTime.of(11, 0)),
+				20_000 + 1000L * random.nextInt(81),
 				new BnbOption(1 + random.nextInt(3), 1 + random.nextInt(4), 1 + random.nextInt(3)),
-				"설명", 20_000 + 1000L * random.nextInt(81)
-			);
+				new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)),
+				BnbType.values()[random.nextInt(3)], "숙소 설명", "호스트명",
+				2 + random.nextInt(3),
+				3 + (Math.round(random.nextInt(21) * 0.1 * 10) / 10d),
+				random.nextInt(1000));
 
 			// 각 숙소당 3개의 랜덤 이미지를 저장한다. S3에 100개의 이미지를 넣고 랜덤으로 돌리고자 한다
 			// TODO: S3에 이미지 채워넣고 파일이름 번호순으로 나열하기
