@@ -22,6 +22,8 @@ public class Member {
 	@Column(name = "member_id")
 	private Long id;
 
+	private String name;
+
 	// 다대일 양방향 Reservation <-> Member
 	@OneToMany(mappedBy = "member")
 	private List<Reservation> reservations = new ArrayList<>();
@@ -29,4 +31,5 @@ public class Member {
 	public List<Reservation> getReservations() {
 		return reservations;
 	}
+
 }
