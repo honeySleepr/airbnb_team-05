@@ -56,9 +56,7 @@ final class NearbyDestinationCell: UICollectionViewCell {
     
     func NearbyDestinationLayout() {
         nearbyImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         distanceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
