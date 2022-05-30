@@ -2,10 +2,10 @@ package project.airbnb.reservation;
 
 import java.time.LocalDate;
 import lombok.Getter;
-import lombok.ToString;
+import project.airbnb.bnb.Address;
+import project.airbnb.bnb.Bnb;
 
 @Getter
-@ToString
 public class ShortReservationDto {
 
 	private Long reservationId;
@@ -18,13 +18,15 @@ public class ShortReservationDto {
 	private String district;
 
 	public ShortReservationDto(Reservation reservation) {
+		Bnb bnb = reservation.getBnb();
+		Address address = bnb.getAddress();
 		this.reservationId = reservation.getId();
-		this.bnbName = reservation.getBnb().getName();
-		this.imageUrl = reservation.getBnb().getImages().get(0).getImageUrl();
+		this.bnbName = bnb.getName();
+		this.imageUrl = bnb.getImages().get(0).getImageUrl();
 		this.checkIn = reservation.getCheckInOutDate().getCheckIn();
 		this.checkOut = reservation.getCheckInOutDate().getCheckOut();
-		this.country = reservation.getBnb().getAddress().getCountry();
-		this.city = reservation.getBnb().getAddress().getCity();
-		this.district = reservation.getBnb().getAddress().getDistrict();
+		this.country = address.getCountry();
+		this.city = address.getCity();
+		this.district = address.getDistrict();
 	}
 }

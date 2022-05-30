@@ -13,4 +13,8 @@ public class Headcount {
 	private int adults;
 	private int children;
 	private int infants;
+
+	public int sum() {
+		return adults + children + infants;
+	}
 }

@@ -25,17 +25,12 @@ public class Reservation {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "reservation_id")
 	private Long id;
-
-	// 다대일 단방향 Reservation -> Member
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY) // 다대일 단방향 Reservation -> Member
 	@JoinColumn(name = "member_id")
 	private Member member;
-
-	// 다대일 단방향 Reservation -> Bnb
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY) // 다대일 단방향 Reservation -> Bnb
 	@JoinColumn(name = "bnb_id")
 	private Bnb bnb;
-
 	@Embedded
 	private CheckInOutDate checkInOutDate;
 	@Embedded
