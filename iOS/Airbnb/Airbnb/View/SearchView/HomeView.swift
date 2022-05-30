@@ -11,19 +11,20 @@ final class HomeView: UIView {
     
     override init(frame: CGRect ){
         super.init(frame: frame)
+        backgroundColor = .white
         homeViewConfiguration()
-        
         
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        fatalError()
     }
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero,
-                                              collectionViewLayout: Self.getCollectionViewLayout())
+                                              collectionViewLayout: self.getCollectionViewLayout())
         collectionView.isScrollEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
@@ -35,7 +36,7 @@ final class HomeView: UIView {
         collectionView.register(CollectionHeaderView.self,
                                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                         withReuseIdentifier: CollectionHeaderView.identifier)
-                collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
         return collectionView
     }()
     
@@ -54,7 +55,7 @@ final class HomeView: UIView {
         ])
     }
     
-    static func getCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+    func getCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (sectionIndex, env) -> NSCollectionLayoutSection? in
             switch sectionIndex {
             case 0:
