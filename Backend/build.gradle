@@ -20,8 +20,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // https://mvnrepository.com/artifact/com.github.gavlyukovskiy/p6spy-spring-boot-starter
-    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0'
+    //쿼리가 2개씩 중복되어 표시되어 주석처리함
+//    // https://mvnrepository.com/artifact/com.github.gavlyukovskiy/p6spy-spring-boot-starter
+//    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0'
 
     // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
     implementation 'org.apache.poi:poi-ooxml:5.2.2'
