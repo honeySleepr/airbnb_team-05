@@ -51,6 +51,8 @@ public class Bnb {
 	private double rating;
 	private int reviewCount;
 
+
+	// Todo: 이렇게 하는 방법 말고는 없을까
 	public void saveBnbImage(BnbImage image) {
 		image.saveBnb(this);
 		images.add(image);

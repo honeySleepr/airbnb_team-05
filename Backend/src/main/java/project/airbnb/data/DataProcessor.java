@@ -35,9 +35,9 @@ import project.airbnb.bnbImage.BnbImage;
 @Slf4j
 public class DataProcessor {
 
-	public static final String RESOURCE_PATH = "Backend/src/main/resources/";
+	public static final String RESOURCE_PATH = "src/main/resources/";
 	public static final String GEOCODE_URL = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query=";
-	public static final String S3_IMAGE_URL = "";
+	public static final String S3_IMAGE_URL = "http://S3dummy.com/";
 
 	public final String clientId;
 	public final String clientSecret;
@@ -153,8 +153,8 @@ public class DataProcessor {
 			// 각 숙소당 3개의 랜덤 이미지를 저장한다. S3에 100개의 이미지를 넣고 랜덤으로 돌리고자 한다
 			// TODO: S3에 이미지 채워넣고 파일이름 번호순으로 나열하기
 			for (int j = 0; j < 3; j++) {
-				BnbImage bnbImage = new BnbImage();
-				bnbImage.setImageUrl(S3_IMAGE_URL + (1 + random.nextInt(100)));
+				BnbImage bnbImage = new BnbImage(null, null,
+					S3_IMAGE_URL + (1 + random.nextInt(100)));
 				bnb.saveBnbImage(bnbImage);
 			}
 
