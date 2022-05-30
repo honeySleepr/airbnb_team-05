@@ -3,10 +3,12 @@ package project.airbnb.reservation;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.Getter;
 import project.airbnb.bnb.Address;
 import project.airbnb.bnb.Bnb;
 import project.airbnb.bnb.BnbType;
 
+@Getter
 public class LongReservationDto {
 
 	private Long reservationId;

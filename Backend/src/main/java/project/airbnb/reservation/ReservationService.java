@@ -12,15 +12,15 @@ public class ReservationService {
 	private ReservationRepository reservationRepository;
 
 
-	public List<ShortReservationDto> showList() {
-		return reservationRepository.findReservationsByMemberId(1L)
+	public List<ShortReservationDto> showList(Long id) {
+		return reservationRepository.findReservationsByMemberId(id)
 			.stream()
 			.map(ShortReservationDto::new)
 			.collect(Collectors.toList());
 	}
 
-	public LongReservationDto showDetails(Long reservationId) {
-		Reservation reservation = reservationRepository.findReservationById(1L)
+	public LongReservationDto showDetails(Long id) {
+		Reservation reservation = reservationRepository.findReservationById(id)
 			.orElseThrow(IllegalArgumentException::new);
 		return new LongReservationDto(reservation);
 	}
