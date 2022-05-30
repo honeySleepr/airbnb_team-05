@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeView: UIView {
     
-    override init(frame: CGRect ){
+    override init(frame: CGRect){
         super.init(frame: frame)
         backgroundColor = .white
         homeViewConfiguration()
@@ -34,8 +34,8 @@ final class HomeView: UIView {
         collectionView.register(NearbyDestinationCell.self, forCellWithReuseIdentifier: NearbyDestinationCell.identifier)
         collectionView.register(LivingSpotCell.self, forCellWithReuseIdentifier: LivingSpotCell.identifier)
         collectionView.register(CollectionHeaderView.self,
-                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                        withReuseIdentifier: CollectionHeaderView.identifier)
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: CollectionHeaderView.identifier)
         
         return collectionView
     }()
@@ -57,15 +57,7 @@ final class HomeView: UIView {
     
     func getCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { (sectionIndex, env) -> NSCollectionLayoutSection? in
-            switch sectionIndex {
-            case 0:
-                return HomeZeroLayoutSection().createLayout()
-            case 1:
-                return HomeFirstLayoutSection().createLayout()
-            default:
-                return HomeDefaultLayoutSecion().createLayout()
-            }
+            return HomeViewLayout(sectionIndex: sectionIndex).create()
         }
     }
-    
 }

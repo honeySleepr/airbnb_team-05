@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBarController()
-        view = homeView
+        self.view = homeView
         homeView.setDataSource(dataSource)
     }
     
