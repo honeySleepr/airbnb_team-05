@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
 import project.airbnb.bnbImage.BnbImage;
 
 @Entity
-@Getter // 임시 생성 (BC)
-@AllArgsConstructor // 임시 생성 (BC)
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 
@@ -31,33 +31,29 @@ public class Bnb {
 	@OneToMany(mappedBy = "bnb", cascade = CascadeType.ALL)
 	private List<BnbImage> images = new ArrayList<>();
 
+	// 중요 정보
 	private String name;
-	private double rating;
-	private int reviewCount;
 	@Embedded
 	private Address address;
+	private Long fee;
 
-	@Enumerated(EnumType.STRING)
-	private BnbType bnbType;
 
-	private String host;
-
-	private Integer maxGuestNumber;
-
-	@Embedded
-	private Time time;
-
+	// 비 중요 정보
 	@Embedded
 	private BnbOption bnbOption;
-
+	@Embedded
+	private CheckInOutTime checkInOutTime;
+	@Enumerated(EnumType.STRING)
+	private BnbType bnbType;
 	private String description;
-
-	private Long fee;
+	private String host;
+	private Integer maxGuestNumber;
+	private double rating;
+	private int reviewCount;
 
 	public void saveBnbImage(BnbImage image) {
 		image.setBnb(this);
 		images.add(image);
 	}
-
 
 }

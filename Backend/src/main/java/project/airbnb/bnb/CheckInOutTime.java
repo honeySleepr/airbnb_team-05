@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Time {
+public class CheckInOutTime {
 
 	private LocalTime checkIn;
 	private LocalTime checkOut;
 
-	public Time(LocalTime checkIn, LocalTime checkOut) {
+	public CheckInOutTime(LocalTime checkIn, LocalTime checkOut) {
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 	}
