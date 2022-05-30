@@ -10,8 +10,8 @@ import UIKit
 final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
     
     var homeData: [MyHomeSection] = [
-        .first([MyHomeSection.FirstItem.init(image: UIImage(named: "heroImage") ?? UIImage())] ),
-        .second([MyHomeSection.SecondItem].init(repeating: MyHomeSection.SecondItem.init(image: UIImage(named: "서울") ?? UIImage(),
+        .first([MyHomeSection.FirstItem.init(image: UIImage(named: "mainImage") ?? UIImage())] ),
+        .second([MyHomeSection.SecondItem].init(repeating: MyHomeSection.SecondItem.init(image: UIImage(named: "seoul") ?? UIImage(),
                                                                                          title: "서울", distance: "차로 30분 거리"), count: 20)),
         .third([MyHomeSection.ThirdItem].init(repeating: MyHomeSection.ThirdItem.init(image: UIImage(named: "blackHouse") ?? UIImage(), title: "자연생활을 만끽할 수 있는 숙소"), count: 5))
     ]
