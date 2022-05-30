@@ -17,7 +17,7 @@ import project.airbnb.bnb.Bnb;
 import project.airbnb.bnb.BnbOption;
 import project.airbnb.bnb.BnbRepository;
 import project.airbnb.bnb.BnbType;
-import project.airbnb.bnb.Time;
+import project.airbnb.bnb.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 import project.airbnb.bnbImage.BnbImageRepository;
 import project.airbnb.member.Member;
@@ -41,18 +41,20 @@ class ReservationControllerTest {
 
 	@BeforeEach
 	void setUp() {
-		BnbImage bnbImage = new BnbImage(null, null, "http://www.naver.com");
+		BnbImage bnbImage1 = new BnbImage(null, null, "http://www.naver111.com");
+		BnbImage bnbImage2 = new BnbImage(null, null, "http://www.naver222.com");
 
-		Bnb bnb = new Bnb(null, new ArrayList<>(), "name1", 5.0, 10,
-			new Address("한국", "서울시", "강남구", "양재로 29"),
-			BnbType.GUESTHOUSE, "BC", 4,
-			new Time(LocalTime.of(16, 30), LocalTime.of(11, 00)),
-			new BnbOption(1, 2, 1),
-			"테스트 bnb 설명", 50_000L);
-		bnb.saveBnbImage(bnbImage);
+		Bnb bnb = new Bnb(null, new ArrayList<>(), "숙소 이름",
+			new Address("한국", "성남시", "분당구", "성남시 분당구 백현로 20"),
+			50_000L, new BnbOption(1, 2, 1),
+			new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)),
+			BnbType.HOTEL, "숙소 설명", "호스트명", 3,
+			4.5d, 200);
+		bnb.saveBnbImage(bnbImage1);
+		bnb.saveBnbImage(bnbImage2);
 		bnbRepository.save(bnb);
 
-		Member member = new Member(null, new ArrayList<>());
+		Member member = new Member(null);
 
 		Reservation reservation = new Reservation(null, member, null,
 			new CheckInOutDate(LocalDate.of(2022, 1, 1),
@@ -66,16 +68,21 @@ class ReservationControllerTest {
 
 	}
 
+	// Data JPA의 query method에 대한 이해를 위한 테스트
 	@Test
-	@DisplayName("Entity 들이 서로 잘 연결되는지 확인하기 위한 임시 테스트입니다")
+	@DisplayName("저장된 Reservation Entity가 findById를 통해 정상적으로 조회 된다")
 	public void saveMember() {
 		// given
 
-		// when
 		List<ShortReservationDto> list = reservationController.showList();
+		for (ShortReservationDto dto : list) {
+			System.out.println("dto = " + dto);
+		}
+		ShortReservationDto dto = list.get(0);
 
 		// then
-		assertThat(list.get(0).getBnbName()).isEqualTo("name1");
+		assertThat(dto.getBnbName()).isEqualTo("숙소 이름");
+		assertThat(dto.getImageUrl()).isEqualTo("http://www.naver111.com");
 	}
 
 }

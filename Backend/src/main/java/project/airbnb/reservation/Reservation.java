@@ -38,10 +38,8 @@ public class Reservation {
 
 	@Embedded
 	private CheckInOutDate checkInOutDate;
-
 	@Embedded
 	private Headcount headcount;
-
 	private Long totalFee;
 
 	public void saveBnb(Bnb bnb) {
