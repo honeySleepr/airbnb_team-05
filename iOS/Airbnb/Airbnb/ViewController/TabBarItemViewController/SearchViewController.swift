@@ -14,7 +14,6 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         searchBarController()
         view = homeView
         homeView.setDataSource(dataSource)
