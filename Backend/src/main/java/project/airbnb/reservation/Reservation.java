@@ -26,7 +26,7 @@ public class Reservation {
 	@Column(name = "reservation_id")
 	private Long id;
 
-	// 다대일 양방향 Reservation <-> Member
+	// 다대일 단방향 Reservation -> Member
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "member_id")
 	private Member member;
@@ -50,6 +50,5 @@ public class Reservation {
 
 	public void saveMember(Member member) {
 		this.member = member;
-		member.getReservations().add(this);
 	}
 }
