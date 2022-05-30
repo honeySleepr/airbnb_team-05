@@ -55,7 +55,7 @@ class ReservationControllerTest {
 		Member member = new Member(null, new ArrayList<>());
 
 		Reservation reservation = new Reservation(null, member, null,
-			new BookedSchedule(LocalDate.of(2022, 1, 1),
+			new CheckInOutDate(LocalDate.of(2022, 1, 1),
 				LocalDate.of(2022, 1, 6)),
 			new Headcount(2, 2, 0), 800_000L);
 		reservation.saveBnb(bnb);
@@ -72,7 +72,7 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		List<ShortReservationDto> list = reservationController.list();
+		List<ShortReservationDto> list = reservationController.showList();
 
 		// then
 		assertThat(list.get(0).getBnbName()).isEqualTo("name1");

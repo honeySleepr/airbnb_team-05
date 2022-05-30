@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Getter
-public class BookedSchedule {
+public class CheckInOutDate {
 
 	private LocalDate checkIn;
 	private LocalDate checkOut;

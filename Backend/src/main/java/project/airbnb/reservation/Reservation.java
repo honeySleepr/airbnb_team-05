@@ -37,7 +37,7 @@ public class Reservation {
 	private Bnb bnb;
 
 	@Embedded
-	private BookedSchedule bookedSchedule;
+	private CheckInOutDate checkInOutDate;
 
 	@Embedded
 	private Headcount headcount;

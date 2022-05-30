@@ -16,15 +16,13 @@ public class ShortReservationDto {
 	private LocalDate checkOut;
 	private Address address;
 
+	// Todo : DTO 만들기, 이대로 괜찮은가
 	public ShortReservationDto(Reservation reservation) {
 		this.reservationId = reservation.getId();
 		this.bnbName = reservation.getBnb().getName();
-
-		// Todo : List<BnbImage> 대신 List<String>로 바꾸는게 나을까?
 		this.imageUrl = reservation.getBnb().getImages().get(0).getImageUrl();
-
-		this.checkIn = reservation.getBookedSchedule().getCheckIn();
-		this.checkOut = reservation.getBookedSchedule().getCheckOut();
+		this.checkIn = reservation.getCheckInOutDate().getCheckIn();
+		this.checkOut = reservation.getCheckInOutDate().getCheckOut();
 		this.address = reservation.getBnb().getAddress();
 	}
 }
