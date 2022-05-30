@@ -33,4 +33,8 @@ public class BnbImage {
 	public void setBnb(Bnb bnb) {
 		this.bnb = bnb;
 	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }
