@@ -20,8 +20,14 @@ final class AdvertisingCell: UICollectionViewCell {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        fatalError()
         
     }
+    
+    let mainImageView: UIImageView = {
+        let mainImage = UIImageView()
+        return mainImage
+    }()
     
     let mainExplain: UILabel = {
         let maintext = UILabel()
@@ -31,15 +37,9 @@ final class AdvertisingCell: UICollectionViewCell {
         let length = attributedString.length
         attributedString.addAttributes([.foregroundColor:UIColor.black,
                                         .font:UIFont.systemFont(ofSize: 34, weight: .bold)],
-                                       range: NSRange(location: 0, length: 9))
+                                       range: NSRange(location: 0, length: length))
         maintext.attributedText = attributedString
         return maintext
-    }()
-    
-    let mainImageView: UIImageView = {
-        let mainImage = UIImageView()
-        mainImage.image = UIImage(named: "mainImage")
-        return mainImage
     }()
     
     let subExplain: UILabel = {
@@ -47,20 +47,17 @@ final class AdvertisingCell: UICollectionViewCell {
         subText.numberOfLines = 0
         let subFont = UIFont(name: "Helvetica", size: 24)
         let subAttributedString = NSMutableAttributedString(string: "에어비앤비가 엄선한\n위시리스트를 만나보세요.")
-        subAttributedString.addAttributes([.foregroundColor:UIColor.black,
-                                        .font:UIFont.systemFont(ofSize: 24, weight: .bold)],
-                                       range: NSRange(location: 0, length: 9))
         subText.attributedText = subAttributedString
         return subText
     }()
     
     let travelIdeaButton: UIButton = {
         let tempButton = UIButton()
-        tempButton.translatesAutoresizingMaskIntoConstraints = false
-        tempButton.setTitle("여행 아이디어 얻기", for: .normal)
+        tempButton.setTitle("  여행 아이디어 얻기  ", for: .normal)
         tempButton.setTitleColor(UIColor.white, for: .normal)
         tempButton.backgroundColor = .black
         tempButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        tempButton.layer.cornerRadius = 10
         return tempButton
     }()
     
@@ -77,22 +74,30 @@ final class AdvertisingCell: UICollectionViewCell {
     
     func advertisingLayout() {
         mainImageView.translatesAutoresizingMaskIntoConstraints = false
-        mainImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        mainImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        mainImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        mainImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            mainImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            mainImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mainImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            mainImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
         
         mainExplain.translatesAutoresizingMaskIntoConstraints = false
-        mainExplain.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24).isActive = true
-        mainExplain.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        NSLayoutConstraint.activate([
+            mainExplain.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
+            mainExplain.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+        ])
+        
         
         subExplain.translatesAutoresizingMaskIntoConstraints = false
-        subExplain.topAnchor.constraint(equalTo: mainExplain.bottomAnchor, constant: 20).isActive = true
-        subExplain.leadingAnchor.constraint(equalTo: mainExplain.leadingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            subExplain.topAnchor.constraint(equalTo: mainExplain.bottomAnchor, constant: 20),
+            subExplain.leadingAnchor.constraint(equalTo: mainExplain.leadingAnchor)
+        ])
         
         travelIdeaButton.translatesAutoresizingMaskIntoConstraints = false
-        travelIdeaButton.topAnchor.constraint(equalTo: subExplain.bottomAnchor, constant: 20).isActive = true
-        travelIdeaButton.leadingAnchor.constraint(equalTo: mainExplain.leadingAnchor).isActive = true
-        
+        NSLayoutConstraint.activate([
+            travelIdeaButton.topAnchor.constraint(equalTo: subExplain.bottomAnchor, constant: 20),
+            travelIdeaButton.leadingAnchor.constraint(equalTo: mainExplain.leadingAnchor)
+        ])
     }
 }
