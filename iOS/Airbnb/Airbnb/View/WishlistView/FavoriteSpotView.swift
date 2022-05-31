@@ -40,7 +40,6 @@ final class FavoriteSpotView: UIView {
             navigationBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             navigationBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
         ])
-        
     }
     
     
