@@ -2,14 +2,14 @@ package project.airbnb.reservation;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReservationService {
 
-	private ReservationRepository reservationRepository;
+	private final ReservationRepository reservationRepository;
 
 
 	public List<ShortReservationDto> showList(Long id) {

@@ -1,17 +1,17 @@
 package project.airbnb.reservation;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReservationController {
 
-	private ReservationService reservationService;
+	private final ReservationService reservationService;
 
 
 	@GetMapping("/api/reservations")
