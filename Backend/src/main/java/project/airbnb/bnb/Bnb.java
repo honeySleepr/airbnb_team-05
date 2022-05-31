@@ -52,7 +52,7 @@ public class Bnb {
 	private int reviewCount;
 
 
-	// Todo: 이렇게 하는 방법 말고는 없을까
+	// 연관 관계 편의 메서드!
 	public void saveBnbImage(BnbImage image) {
 		image.saveBnb(this);
 		images.add(image);
