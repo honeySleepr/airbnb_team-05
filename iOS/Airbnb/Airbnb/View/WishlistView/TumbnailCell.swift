@@ -21,6 +21,26 @@ final class Tumbnail:UICollectionViewCell {
         
     }
     
+    private let tumbNailImage: UIImageView = {
+        let tumbNailImage = UIImageView()
+        return tumbNailImage
+    }()
+    
+    private let superHost: UILabel = {
+        let superHost = UILabel()
+        let hostFont = UIFont(name: "Helvetica", size: 24)
+        let superHostAttributedString = NSMutableAttributedString(string: "슈퍼호스트")
+        superHost.attributedText = superHostAttributedString
+        return superHost
+    }()
+    
+    private let heart: UIButton = {
+        let heart = UIButton()
+        heart.setImage(systemName: "heart.fill")
+        return heart
+    }()
+    
+    
     
     
     
