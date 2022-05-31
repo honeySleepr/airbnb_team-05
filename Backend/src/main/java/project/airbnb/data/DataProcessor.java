@@ -90,9 +90,9 @@ public class DataProcessor {
 
 			try {
 				// 주소 -> 위/경도 변환을 위해 전체주소(getCell(4))를 담아 요청을 보낸다.
-				ApiResponse response = new RestTemplate()
+				NaverApiResponse response = new RestTemplate()
 					.exchange(GEOCODE_URL + row.getCell(4).getStringCellValue(),
-						HttpMethod.GET, request, ApiResponse.class).getBody();
+						HttpMethod.GET, request, NaverApiResponse.class).getBody();
 
 				// API response에서 x(경도),y(위도)를 가져와서 업체명과 함께 List에 담는다
 				Coordinate coordinate = response.getCoordinates().get(0);

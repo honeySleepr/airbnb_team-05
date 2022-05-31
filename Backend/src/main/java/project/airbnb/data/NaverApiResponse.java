@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Getter;
 
 @Getter
-public class ApiResponse {
+public class NaverApiResponse {
 
 	@JsonProperty("addresses")
 	private List<Coordinate> coordinates = new ArrayList<>();
