@@ -51,9 +51,10 @@ public class Bnb {
 	private double rating;
 	private int reviewCount;
 
+
+	// 연관 관계 편의 메서드!
 	public void saveBnbImage(BnbImage image) {
-		image.setBnb(this);
+		image.saveBnb(this);
 		images.add(image);
 	}
-
 }
