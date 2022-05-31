@@ -14,7 +14,7 @@ final class NearbyDestinationCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         appendSubView()
-        NearbyDestinationLayout()
+        nearbyDestinationLayout()
     }
     
     @available(*, unavailable)
@@ -54,11 +54,9 @@ final class NearbyDestinationCell: UICollectionViewCell {
         contentView.addSubview(distanceLabel)
     }
     
-    func NearbyDestinationLayout() {
-        nearbyImageView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        distanceLabel.translatesAutoresizingMaskIntoConstraints = false
+    func nearbyDestinationLayout() {
         
+        nearbyImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             nearbyImageView.topAnchor.constraint(equalTo: topAnchor),
             nearbyImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -66,13 +64,15 @@ final class NearbyDestinationCell: UICollectionViewCell {
             nearbyImageView.trailingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 74)
         ])
         
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: nearbyImageView.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: nearbyImageView.trailingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: nearbyImageView.topAnchor),
             titleLabel.heightAnchor.constraint(equalTo: nearbyImageView.heightAnchor, multiplier: 1/2)
         ])
         
+        distanceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             distanceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             distanceLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
