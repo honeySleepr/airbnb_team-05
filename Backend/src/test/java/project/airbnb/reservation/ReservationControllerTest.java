@@ -22,6 +22,7 @@ import project.airbnb.bnb.BnbRepository;
 import project.airbnb.bnb.BnbType;
 import project.airbnb.bnb.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
+import project.airbnb.commons.ApiResponse;
 import project.airbnb.member.Member;
 import project.airbnb.member.MemberRepository;
 
@@ -82,7 +83,9 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		List<ShortReservationDto> list = reservationController.showList(memberId);
+		ApiResponse<List<ShortReservationDto>> response = reservationController.showList(
+			memberId);
+		List<ShortReservationDto> list = response.getData();
 		for (ShortReservationDto dto : list) {
 			log.debug("ShortReservationDto : {}", dto);
 		}
@@ -108,7 +111,9 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		LongReservationDto dto = reservationController.showDetails(reservationId1);
+		ApiResponse<LongReservationDto> response = reservationController.showDetails(
+			reservationId1);
+		LongReservationDto dto = response.getData();
 		log.debug("LongReservationDto : {}", dto);
 
 		// then
