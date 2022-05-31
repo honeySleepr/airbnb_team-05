@@ -12,7 +12,7 @@ final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
     var homeData: [MyHomeSection] = [
         .advertising([MyHomeSection.advertisingItem.init(image: UIImage(named: "mainImage") ?? UIImage())] ),
         .destination([MyHomeSection.destinationItem].init(repeating: MyHomeSection.destinationItem.init(image: UIImage(named: "seoul") ?? UIImage(),
-                                                                                         title: "서울", distance: "차로 30분 거리"), count: 20)),
+                                                                                                        title: "서울", distance: "차로 30분 거리"), count: 20)),
         .livingSpot([MyHomeSection.livingSpotItem].init(repeating: MyHomeSection.livingSpotItem.init(image: UIImage(named: "blackHouse") ?? UIImage(), title: "자연생활을 만끽할 수 있는 숙소"), count: 5))
     ]
     
@@ -68,15 +68,16 @@ final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionHeaderView.identifier, for: indexPath) as? CollectionHeaderView else {
                 return UICollectionReusableView()
             }
+            let sectionType = Section.allCases[indexPath.section]
             
-            switch indexPath.section {
-            case 1:
+            switch sectionType {
+            case .destination:
                 headerView.setHeaderText(text: "가까운 여행지 둘러보기")
                 headerView.setHeaderFontSize(size: 22)
-            case 2:
+            case .livingSpot:
                 headerView.setHeaderText(text: "어디에서나,\n여행은 살아보는거야!")
                 headerView.setHeaderFontSize(size: 22)
-            default:
+            case .otherwise:
                 headerView.setHeaderText(text: "")
             }
             
@@ -109,4 +110,8 @@ enum MyHomeSection {
     }
 }
 
-
+enum Section: Int, CaseIterable {
+    case destination = 0
+    case livingSpot = 1
+    case otherwise = 2
+}

@@ -16,12 +16,14 @@ struct HomeViewLayout {
     }
     
     func create() -> NSCollectionLayoutSection? {
-        switch sectionIndex {
-        case 0:
+        let index = SectionIndex.allCases[sectionIndex]
+        
+        switch index {
+        case .advertisingSecion:
             return HomeAdvertisingLayoutSection().createLayout()
-        case 1:
+        case .destinationSection:
             return HomeDestinationLayoutSection().createLayout()
-        default:
+        case .livingSpotSection:
             return HomeLivingSpotLayoutSecion().createLayout()
         }
     }
@@ -50,7 +52,7 @@ struct HomeViewLayout {
             return section
         }
     }
-
+    
     struct HomeDestinationLayoutSection {
         func createLayout() -> NSCollectionLayoutSection? {
             let itemFractionalWidthFraction = 0.8
@@ -81,7 +83,7 @@ struct HomeViewLayout {
             return section
         }
     }
-
+    
     struct HomeLivingSpotLayoutSecion {
         func createLayout() -> NSCollectionLayoutSection? {
             let itemFractionalWidthFraction = 0.8
@@ -114,4 +116,10 @@ struct HomeViewLayout {
         }
     }
     
+}
+
+enum SectionIndex: Int, CaseIterable {
+    case advertisingSecion = 0
+    case destinationSection = 1
+    case livingSpotSection = 2
 }
