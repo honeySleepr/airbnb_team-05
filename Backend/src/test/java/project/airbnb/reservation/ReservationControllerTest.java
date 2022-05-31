@@ -58,7 +58,7 @@ class ReservationControllerTest {
 		bnb.saveBnbImage(bnbImage2);
 		bnbRepository.save(bnb);
 
-		Member member = new Member(null);
+		Member member = new Member(null, "nori");
 		Member foundMember = memberRepository.save(member);
 		memberId = foundMember.getId();
 

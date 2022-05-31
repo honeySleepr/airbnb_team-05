@@ -12,7 +12,6 @@ public class BnbOption {
 	private int bedCount;
 	private int bathroomCount;
 
-
 	public BnbOption(int roomCount, int bedCount, int bathroomCount) {
 		this.roomCount = roomCount;
 		this.bedCount = bedCount;
