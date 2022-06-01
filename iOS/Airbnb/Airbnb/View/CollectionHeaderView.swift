@@ -30,8 +30,8 @@ class CollectionHeaderView: UICollectionReusableView {
         return tempTitle
     }()
     
-    func setHeaderText(text: String) {
-        title.text = text
+    func setHeaderText(text: String?) {
+        self.title.text = text
     }
     
     func setHeaderFontSize(size: CGFloat) {
@@ -41,6 +41,7 @@ class CollectionHeaderView: UICollectionReusableView {
     func configuration() {
         self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
         title.centerYAnchor.constraint(equalTo: centerYAnchor),
         title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

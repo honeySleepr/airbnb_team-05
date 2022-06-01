@@ -56,7 +56,7 @@ final class HomeView: UIView {
     }
     
     func getCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { (sectionIndex, env) -> NSCollectionLayoutSection? in
+        UICollectionViewCompositionalLayout { (sectionIndex:Int, _ ) -> NSCollectionLayoutSection? in
             return HomeViewLayout(sectionIndex: sectionIndex).create()
         }
     }

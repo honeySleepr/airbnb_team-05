@@ -16,8 +16,7 @@ struct HomeViewLayout {
     }
     
     func create() -> NSCollectionLayoutSection? {
-        let index = SectionIndex.allCases[sectionIndex]
-        
+        let index = CellList.allCases[sectionIndex]
         switch index {
         case .advertisingSecion:
             return HomeAdvertisingLayoutSection().createLayout()
@@ -80,6 +79,7 @@ struct HomeViewLayout {
             section.boundarySupplementaryItems = [header]
             section.orthogonalScrollingBehavior = .continuous
             
+            
             return section
         }
     }
@@ -118,7 +118,7 @@ struct HomeViewLayout {
     
 }
 
-enum SectionIndex: Int, CaseIterable {
+enum CellList: Int, CaseIterable {
     case advertisingSecion = 0
     case destinationSection = 1
     case livingSpotSection = 2

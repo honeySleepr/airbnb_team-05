@@ -68,17 +68,17 @@ final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionHeaderView.identifier, for: indexPath) as? CollectionHeaderView else {
                 return UICollectionReusableView()
             }
-            let sectionType = Section.allCases[indexPath.section]
             
+            let sectionType = SectionList.allCases[indexPath.section]
             switch sectionType {
+            case .otherwise:
+                headerView.setHeaderText(text: "")
             case .destination:
                 headerView.setHeaderText(text: "가까운 여행지 둘러보기")
                 headerView.setHeaderFontSize(size: 22)
             case .livingSpot:
                 headerView.setHeaderText(text: "어디에서나,\n여행은 살아보는거야!")
                 headerView.setHeaderFontSize(size: 22)
-            case .otherwise:
-                headerView.setHeaderText(text: "")
             }
             
             return headerView
@@ -87,31 +87,30 @@ final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
         }
     }
     
+    enum MyHomeSection {
+        case advertising([advertisingItem])
+        case destination([destinationItem])
+        case livingSpot([livingSpotItem])
+        
+        struct advertisingItem {
+            let image: UIImage
+        }
+        
+        struct destinationItem {
+            let image: UIImage
+            let title: String
+            let distance: String
+        }
+        
+        struct livingSpotItem {
+            let image: UIImage
+            let title: String
+        }
+    }
 }
 
-enum MyHomeSection {
-    case advertising([advertisingItem])
-    case destination([destinationItem])
-    case livingSpot([livingSpotItem])
-    
-    struct advertisingItem {
-        let image: UIImage
-    }
-    
-    struct destinationItem {
-        let image: UIImage
-        let title: String
-        let distance: String
-    }
-    
-    struct livingSpotItem {
-        let image: UIImage
-        let title: String
-    }
-}
-
-enum Section: Int, CaseIterable {
-    case destination = 0
-    case livingSpot = 1
-    case otherwise = 2
+enum SectionList: Int, CaseIterable {
+    case otherwise = 0
+    case destination
+    case livingSpot
 }
