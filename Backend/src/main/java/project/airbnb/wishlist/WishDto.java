@@ -9,8 +9,8 @@ public class WishDto {
 	private Long wishlistId;
 	private Long bnbId;
 	private String imageUrl;
-	private double rating;
-	private int reviewCount;
+	private Double rating;
+	private Integer reviewCount;
 	private String bnbName;
 	private Long fee;
 
