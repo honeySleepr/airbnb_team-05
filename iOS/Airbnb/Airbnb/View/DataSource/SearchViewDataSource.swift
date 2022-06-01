@@ -107,10 +107,9 @@ final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
             let title: String
         }
     }
-}
-
-enum SectionList: Int, CaseIterable {
-    case otherwise = 0
-    case destination
-    case livingSpot
+    enum SectionList: Int, CaseIterable {
+        case otherwise = 0
+        case destination
+        case livingSpot
+    }
 }
