@@ -8,13 +8,20 @@
 import UIKit
 
 class WishlistViewController: UIViewController {
-
+    
+    private var favoriteSpotView = FavoriteSpotView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
+        self.view = favoriteSpotView
+        
         
     }
-
-
+    
+    
+    
+    
+    
+    
 }
 

@@ -9,13 +9,14 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    private var homeView = HomeView()
+    private lazy var homeView = HomeView(frame: view.frame)
+    private let dataSource = SearchViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         searchBarController()
-        addSearchView()
+        self.view = homeView
+        homeView.setDataSource(dataSource)
     }
     
     private func searchBarController() {
@@ -27,13 +28,5 @@ class SearchViewController: UIViewController {
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "숙소 찾기"
     }
-    
-    private func addSearchView() {
-        self.view.addSubview(homeView)
-        homeView.translatesAutoresizingMaskIntoConstraints = false
-        homeView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        homeView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        homeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        homeView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-    }
+
 }
