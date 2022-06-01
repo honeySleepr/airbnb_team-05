@@ -16,6 +16,9 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import project.airbnb.bnb.embedded.Address;
+import project.airbnb.bnb.embedded.BnbOption;
+import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 
 @Entity
@@ -24,14 +27,12 @@ import project.airbnb.bnbImage.BnbImage;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 
+	// 중요 정보
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "bnb_id")
 	private Long id;
-
 	@OneToMany(mappedBy = "bnb", cascade = CascadeType.ALL)
 	private List<BnbImage> images = new ArrayList<>();
-
-	// 중요 정보
 	private String name;
 	@Embedded
 	private Address address;
@@ -48,8 +49,8 @@ public class Bnb {
 	private String description;
 	private String host;
 	private Integer maxGuestNumber;
-	private double rating;
-	private int reviewCount;
+	private Double rating;
+	private Integer reviewCount;
 
 
 	// 연관 관계 편의 메서드!

@@ -23,12 +23,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import project.airbnb.bnb.Address;
+import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.Bnb;
-import project.airbnb.bnb.BnbOption;
+import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.BnbRepository;
 import project.airbnb.bnb.BnbType;
-import project.airbnb.bnb.CheckInOutTime;
+import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 
 @Component

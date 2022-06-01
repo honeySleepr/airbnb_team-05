@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import project.airbnb.commons.ApiResponse;
 
 @Service
 @RequiredArgsConstructor
@@ -13,26 +12,19 @@ public class ReservationService {
 	private final ReservationRepository reservationRepository;
 
 
-	public ApiResponse<List<ShortReservationDto>> showList(Long id) {
-		List<ShortReservationDto> dtos = reservationRepository.findReservationsByMemberId(id)
-			.stream()
-			.map(ShortReservationDto::new)
-			.collect(Collectors.toList());
+	public List<SimpleReservationDto> showList(Long id) {
 
-		return new ApiResponse<>(dtos);
+		return reservationRepository.findReservationsByMemberId(id)
+			.stream()
+			.map(SimpleReservationDto::new)
+			.collect(Collectors.toList());
 	}
 
-	public ApiResponse<LongReservationDto> showDetails(Long id) {
+	public DetailReservationDto showDetails(Long id) {
 		Reservation reservation = reservationRepository.findReservationById(id)
 			.orElseThrow(IllegalArgumentException::new);
 
-		return new ApiResponse<>(new LongReservationDto(reservation));
+		return new DetailReservationDto(reservation);
 	}
 
-
-	static class ReservationResponse<T> {
-
-		private T reservations;
-
-	}
 }

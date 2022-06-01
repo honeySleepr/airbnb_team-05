@@ -15,12 +15,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import project.airbnb.bnb.Address;
 import project.airbnb.bnb.Bnb;
-import project.airbnb.bnb.BnbOption;
 import project.airbnb.bnb.BnbRepository;
 import project.airbnb.bnb.BnbType;
-import project.airbnb.bnb.CheckInOutTime;
+import project.airbnb.bnb.embedded.Address;
+import project.airbnb.bnb.embedded.BnbOption;
+import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 import project.airbnb.commons.ApiResponse;
 import project.airbnb.member.Member;
@@ -83,16 +83,13 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		ApiResponse<List<ShortReservationDto>> response = reservationController.showList(
+		ApiResponse<List<SimpleReservationDto>> response = reservationController.showList(
 			memberId);
-		List<ShortReservationDto> list = response.getData();
-		for (ShortReservationDto dto : list) {
-			log.debug("ShortReservationDto : {}", dto);
-		}
-		ShortReservationDto dto1 = list.get(0);
-		ShortReservationDto dto2 = list.get(1);
 
 		// then
+		List<SimpleReservationDto> list = response.getData();
+		SimpleReservationDto dto1 = list.get(0);
+		SimpleReservationDto dto2 = list.get(1);
 		assertThat(list.size()).isEqualTo(2);
 		assertThat(dto1.getReservationId()).isEqualTo(reservationId1);
 		assertThat(dto1.getBnbName()).isEqualTo("숙소 이름");
@@ -111,12 +108,12 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		ApiResponse<LongReservationDto> response = reservationController.showDetails(
+		ApiResponse<DetailReservationDto> response = reservationController.showDetails(
 			reservationId1);
 
 		// then
-		assertThat(response.getData()).isExactlyInstanceOf(LongReservationDto.class);
-		LongReservationDto data = response.getData();
+		assertThat(response.getData()).isExactlyInstanceOf(DetailReservationDto.class);
+		DetailReservationDto data = response.getData();
 		assertThat(data.getReservationId()).isEqualTo(reservationId1);
 		assertThat(data.getBnbName()).isEqualTo("숙소 이름");
 		assertThat(data.getImageUrls().size()).isEqualTo(2);

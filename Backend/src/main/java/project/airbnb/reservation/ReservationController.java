@@ -14,16 +14,15 @@ public class ReservationController {
 
 	private final ReservationService reservationService;
 
-
 	@GetMapping("/api/reservations")
-	public ApiResponse<List<ShortReservationDto>> showList(
+	public ApiResponse<List<SimpleReservationDto>> showList(
 		@RequestHeader("Authorization") Long id) {
 		// Todo : 예약 목록 요청시 유저 인증 정보를 받아서 검증한다. 현재는 임시로 Long id만 받는다.
-		return reservationService.showList(id);
+		return new ApiResponse<>(reservationService.showList(id));
 	}
 
 	@GetMapping("/api/reservations/{id}")
-	public ApiResponse<LongReservationDto> showDetails(@PathVariable("id") Long id) {
-		return reservationService.showDetails(id);
+	public ApiResponse<DetailReservationDto> showDetails(@PathVariable("id") Long id) {
+		return new ApiResponse<>(reservationService.showDetails(id));
 	}
 }
