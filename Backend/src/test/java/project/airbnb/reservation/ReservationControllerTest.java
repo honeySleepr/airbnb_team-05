@@ -113,15 +113,15 @@ class ReservationControllerTest {
 		// when
 		ApiResponse<LongReservationDto> response = reservationController.showDetails(
 			reservationId1);
-		LongReservationDto dto = response.getData();
-		log.debug("LongReservationDto : {}", dto);
 
 		// then
-		assertThat(dto.getReservationId()).isEqualTo(reservationId1);
-		assertThat(dto.getBnbName()).isEqualTo("숙소 이름");
-		assertThat(dto.getImageUrls().size()).isEqualTo(2);
-		assertThat(dto.getImageUrls().get(0)).isEqualTo("http://www.naver111.com");
-		assertThat(dto.getImageUrls().get(1)).isEqualTo("http://www.naver222.com");
+		assertThat(response.getData()).isExactlyInstanceOf(LongReservationDto.class);
+		LongReservationDto data = response.getData();
+		assertThat(data.getReservationId()).isEqualTo(reservationId1);
+		assertThat(data.getBnbName()).isEqualTo("숙소 이름");
+		assertThat(data.getImageUrls().size()).isEqualTo(2);
+		assertThat(data.getImageUrls().get(0)).isEqualTo("http://www.naver111.com");
+		assertThat(data.getImageUrls().get(1)).isEqualTo("http://www.naver222.com");
 	}
 
 	@Test
