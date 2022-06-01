@@ -13,7 +13,7 @@ import project.airbnb.commons.ApiResponse;
 @RequiredArgsConstructor
 @RestController
 public class WishController {
-	
+
 	private final WishService wishlistService;
 
 	@GetMapping("/api/wishlist")
@@ -26,6 +26,7 @@ public class WishController {
 		wishlistService.saveWish(memberId, bnbId);
 	}
 
+	// Todo : 200 응답 내리기?
 	@DeleteMapping("/api/wishlist")
 	public void deleteWish(@RequestParam Long memberId, @RequestHeader Long bnbId) {
 		wishlistService.deleteWish(memberId, bnbId);

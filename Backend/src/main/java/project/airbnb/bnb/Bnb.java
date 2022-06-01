@@ -23,7 +23,7 @@ import project.airbnb.bnbImage.BnbImage;
 
 @Entity
 @Getter
-@AllArgsConstructor // Todo: null 값들 제외한 생성자 직접 만들기
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 

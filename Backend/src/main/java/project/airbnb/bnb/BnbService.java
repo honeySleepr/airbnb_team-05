@@ -2,11 +2,13 @@ package project.airbnb.bnb;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.airbnb.bnb.dto.DetailBnbDto;
 import project.airbnb.wishlist.WishRepository;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class BnbService {
 
 	private final BnbRepository bnbRepository;

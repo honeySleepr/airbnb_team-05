@@ -15,11 +15,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.Bnb;
-import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.BnbRepository;
 import project.airbnb.bnb.BnbType;
+import project.airbnb.bnb.embedded.Address;
+import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 import project.airbnb.commons.ApiResponse;
@@ -85,14 +85,11 @@ class ReservationControllerTest {
 		// when
 		ApiResponse<List<SimpleReservationDto>> response = reservationController.showList(
 			memberId);
-		List<SimpleReservationDto> list = response.getData();
-		for (SimpleReservationDto dto : list) {
-			log.debug("ShortReservationDto : {}", dto);
-		}
-		SimpleReservationDto dto1 = list.get(0);
-		SimpleReservationDto dto2 = list.get(1);
 
 		// then
+		List<SimpleReservationDto> list = response.getData();
+		SimpleReservationDto dto1 = list.get(0);
+		SimpleReservationDto dto2 = list.get(1);
 		assertThat(list.size()).isEqualTo(2);
 		assertThat(dto1.getReservationId()).isEqualTo(reservationId1);
 		assertThat(dto1.getBnbName()).isEqualTo("숙소 이름");
