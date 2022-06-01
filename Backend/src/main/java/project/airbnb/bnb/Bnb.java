@@ -16,11 +16,14 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import project.airbnb.bnb.embedded.Address;
+import project.airbnb.bnb.embedded.BnbOption;
+import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
 
 @Entity
 @Getter
-@AllArgsConstructor
+@AllArgsConstructor // Todo: null 값들 제외한 생성자 직접 만들기
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 

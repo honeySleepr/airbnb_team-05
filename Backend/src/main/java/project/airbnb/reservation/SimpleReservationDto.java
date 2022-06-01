@@ -2,7 +2,7 @@ package project.airbnb.reservation;
 
 import java.time.LocalDate;
 import lombok.Getter;
-import project.airbnb.bnb.Address;
+import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.Bnb;
 
 @Getter
