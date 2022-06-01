@@ -83,14 +83,14 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		ApiResponse<List<ShortReservationDto>> response = reservationController.showList(
+		ApiResponse<List<SimpleReservationDto>> response = reservationController.showList(
 			memberId);
-		List<ShortReservationDto> list = response.getData();
-		for (ShortReservationDto dto : list) {
+		List<SimpleReservationDto> list = response.getData();
+		for (SimpleReservationDto dto : list) {
 			log.debug("ShortReservationDto : {}", dto);
 		}
-		ShortReservationDto dto1 = list.get(0);
-		ShortReservationDto dto2 = list.get(1);
+		SimpleReservationDto dto1 = list.get(0);
+		SimpleReservationDto dto2 = list.get(1);
 
 		// then
 		assertThat(list.size()).isEqualTo(2);
@@ -111,12 +111,12 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		ApiResponse<LongReservationDto> response = reservationController.showDetails(
+		ApiResponse<DetailReservationDto> response = reservationController.showDetails(
 			reservationId1);
 
 		// then
-		assertThat(response.getData()).isExactlyInstanceOf(LongReservationDto.class);
-		LongReservationDto data = response.getData();
+		assertThat(response.getData()).isExactlyInstanceOf(DetailReservationDto.class);
+		DetailReservationDto data = response.getData();
 		assertThat(data.getReservationId()).isEqualTo(reservationId1);
 		assertThat(data.getBnbName()).isEqualTo("숙소 이름");
 		assertThat(data.getImageUrls().size()).isEqualTo(2);

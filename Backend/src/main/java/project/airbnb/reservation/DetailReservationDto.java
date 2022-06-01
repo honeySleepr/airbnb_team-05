@@ -9,7 +9,7 @@ import project.airbnb.bnb.Bnb;
 import project.airbnb.bnb.BnbType;
 
 @Getter
-public class LongReservationDto {
+public class DetailReservationDto {
 
 	private Long reservationId;
 	private String bnbName;
@@ -25,7 +25,7 @@ public class LongReservationDto {
 	private Long totalFee;
 
 
-	public LongReservationDto(Reservation reservation) {
+	public DetailReservationDto(Reservation reservation) {
 		Bnb bnb = reservation.getBnb();
 		Address address = bnb.getAddress();
 		this.reservationId = reservation.getId();
