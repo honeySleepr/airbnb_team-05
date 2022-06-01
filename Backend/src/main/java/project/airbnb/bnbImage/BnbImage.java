@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 import project.airbnb.bnb.Bnb;
 
 @Entity
-@Getter // 임시 생성 (BC)
-@AllArgsConstructor // 임시 생성 (BC)
+@Getter
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class BnbImage {
 
@@ -30,7 +30,8 @@ public class BnbImage {
 
 	private String imageUrl;
 
-	public void setBnb(Bnb bnb) {
+	public void saveBnb(Bnb bnb) {
 		this.bnb = bnb;
 	}
+
 }

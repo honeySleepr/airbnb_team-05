@@ -1,20 +1,20 @@
-package project.airbnb.bnb;
+package project.airbnb.reservation;
 
 import javax.persistence.Embeddable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Getter
-public class Address {
+public class Headcount {
 
-	private String country;
-	private String city;
-	private String district;
-	private String fullAddress;
+	private int adults;
+	private int children;
+	private int infants;
 
+	public int sum() {
+		return adults + children + infants;
+	}
 }

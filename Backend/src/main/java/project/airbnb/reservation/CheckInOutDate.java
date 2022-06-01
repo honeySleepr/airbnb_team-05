@@ -1,5 +1,6 @@
-package project.airbnb.bnb;
+package project.airbnb.reservation;
 
+import java.time.LocalDate;
 import javax.persistence.Embeddable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -10,11 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Getter
-public class Address {
+public class CheckInOutDate {
 
-	private String country;
-	private String city;
-	private String district;
-	private String fullAddress;
-
+	private LocalDate checkIn;
+	private LocalDate checkOut;
 }
