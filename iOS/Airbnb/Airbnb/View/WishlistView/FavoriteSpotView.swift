@@ -13,6 +13,7 @@ final class FavoriteSpotView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         navigationBarLayout()
+        favoriteSpotViewConfiguration()
 
     }
     
@@ -42,7 +43,34 @@ final class FavoriteSpotView: UIView {
         ])
     }
     
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0,
+                                                            width: UIScreen.main.bounds.size.width,
+                                                            height: 500),
+        collectionViewLayout: UICollectionViewFlowLayout())
+        
+        collectionView.isScrollEnabled = true
+        collectionView.showsVerticalScrollIndicator = true
+        collectionView.clipsToBounds = true
+        
+        collectionView.register(TumbnailCell.self, forCellWithReuseIdentifier: TumbnailCell.identifier)
+        collectionView.register(InformationCell.self, forCellWithReuseIdentifier: InformationCell.identifier)
+        return collectionView
+    }()
     
+    func setDataSource(_ dataSource: UICollectionViewDataSource) {
+        collectionView.dataSource = dataSource
+    }
     
+    func favoriteSpotViewConfiguration() {
+        addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
     
 }
