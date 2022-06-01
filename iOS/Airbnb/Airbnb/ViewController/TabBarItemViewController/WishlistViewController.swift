@@ -10,11 +10,12 @@ import UIKit
 class WishlistViewController: UIViewController {
     
     private var favoriteSpotView = FavoriteSpotView()
+    private let datasource = FavoriteSpotViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = favoriteSpotView
-        
+        favoriteSpotView.setDataSource(datasource)
         
     }
     
