@@ -9,6 +9,8 @@ import UIKit
 
 final class InformationCell: UICollectionViewCell {
     
+    static let identifier = "InformationCell"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         appendSubView()

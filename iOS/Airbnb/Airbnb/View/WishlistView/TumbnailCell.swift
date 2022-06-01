@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class Tumbnail:UICollectionViewCell {
+final class TumbnailCell: UICollectionViewCell {
+    
+    static let identifier = "TumbnailCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
