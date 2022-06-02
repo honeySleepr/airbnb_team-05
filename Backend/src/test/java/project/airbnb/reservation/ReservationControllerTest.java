@@ -21,6 +21,7 @@ import project.airbnb.bnb.BnbType;
 import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
+import project.airbnb.bnb.embedded.Coordinates;
 import project.airbnb.bnbImage.BnbImage;
 import project.airbnb.member.Member;
 import project.airbnb.member.MemberRepository;
@@ -50,7 +51,7 @@ class ReservationControllerTest {
 			50_000L, new BnbOption(1, 2, 1),
 			new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)),
 			BnbType.HOTEL, "숙소 설명", "호스트명", 3,
-			4.5d, 200);
+			4.5d, 200, new Coordinates(37.333, 127.444));
 
 		BnbImage bnbImage1 = new BnbImage(null, null, "http://www.naver111.com");
 		BnbImage bnbImage2 = new BnbImage(null, null, "http://www.naver222.com");

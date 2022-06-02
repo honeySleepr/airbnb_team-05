@@ -13,17 +13,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
+import project.airbnb.bnb.embedded.Coordinates;
 import project.airbnb.bnbImage.BnbImage;
 
 @Entity
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Bnb {
 
@@ -36,6 +35,8 @@ public class Bnb {
 	private String name;
 	@Embedded
 	private Address address;
+	@Embedded
+	private Coordinates coordinates;
 	private Long fee;
 
 
@@ -52,6 +53,25 @@ public class Bnb {
 	private Double rating;
 	private Integer reviewCount;
 
+	public Bnb(Long id, List<BnbImage> images, String name, Address address, Long fee,
+		BnbOption bnbOption, CheckInOutTime checkInOutTime, BnbType bnbType,
+		String description, String host, Integer maxGuestNumber, Double rating,
+		Integer reviewCount, Coordinates coordinates) {
+		this.id = id;
+		this.images = images;
+		this.name = name;
+		this.address = address;
+		this.fee = fee;
+		this.bnbOption = bnbOption;
+		this.checkInOutTime = checkInOutTime;
+		this.bnbType = bnbType;
+		this.description = description;
+		this.host = host;
+		this.maxGuestNumber = maxGuestNumber;
+		this.rating = rating;
+		this.reviewCount = reviewCount;
+		this.coordinates = coordinates;
+	}
 
 	// 연관 관계 편의 메서드!
 	public void saveBnbImage(BnbImage image) {
