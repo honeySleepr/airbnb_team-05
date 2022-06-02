@@ -30,8 +30,8 @@ final class ReservationCell: UICollectionViewCell {
     
     private let imageCount: UIButton = {
        let imageCount = UIButton()
-        imageCount.setTitle("  1/18  ", for: .normal)
-        imageCount.setTitleColor(UIColor.systemGray2, for: .normal)
+        imageCount.setTitle("   1/18   ", for: .normal)
+        imageCount.setTitleColor(UIColor.white, for: .normal)
         imageCount.backgroundColor = .systemGray
         imageCount.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .light)
         imageCount.layer.cornerRadius = 10
@@ -56,7 +56,7 @@ final class ReservationCell: UICollectionViewCell {
         let locationAttributedString = NSMutableAttributedString(string: "서초구, 서울, 한국")
         let length = locationAttributedString.length
         locationAttributedString.addAttributes([.foregroundColor: UIColor.black,
-                                            .font: UIFont.systemFont(ofSize: 20, weight: .bold)],
+                                            .font: UIFont.systemFont(ofSize: 20, weight: .medium)],
                                            range: NSRange(location: 0, length: length))
         location.attributedText = locationAttributedString
         return location
@@ -68,7 +68,7 @@ final class ReservationCell: UICollectionViewCell {
         let descriptionAttributedString = NSMutableAttributedString(string: "Spacious and Comfortable cozy house #4")
         let length = descriptionAttributedString.length
         descriptionAttributedString.addAttributes([.foregroundColor: UIColor.black,
-                                            .font: UIFont.systemFont(ofSize: 17, weight: .bold)],
+                                            .font: UIFont.systemFont(ofSize: 17, weight: .light)],
                                            range: NSRange(location: 0, length: length))
         imageDescription.attributedText = descriptionAttributedString
         return imageDescription
