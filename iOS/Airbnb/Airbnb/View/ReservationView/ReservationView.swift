@@ -55,6 +55,7 @@ final class ReservationView: UIView {
         collectionView.clipsToBounds = true
         
         collectionView.register(ReservationCell.self, forCellWithReuseIdentifier: ReservationCell.identifier)
+        collectionView.register(CheckInOutCell.self, forCellWithReuseIdentifier: CheckInOutCell.identifier)
         
         return collectionView
     }()
