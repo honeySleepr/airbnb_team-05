@@ -56,6 +56,7 @@ final class FavoriteSpotView: UIView {
         collectionView.clipsToBounds = true
         
         collectionView.register(TumbnailCell.self, forCellWithReuseIdentifier: TumbnailCell.identifier)
+        collectionView.register(subTumbnailCell.self, forCellWithReuseIdentifier: subTumbnailCell.identifier)
         return collectionView
     }()
     
