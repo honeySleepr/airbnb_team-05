@@ -11,6 +11,10 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 100
+  sql:
+    init:
+      mode: never
+      data-locations: classpath:sql/data.sql
 
 logging:
   level:
