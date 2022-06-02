@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import project.airbnb.commons.ApiResponse;
+import project.airbnb.response.CommonResponse;
 
 @RequiredArgsConstructor
 @RestController
@@ -17,8 +17,8 @@ public class WishController {
 	private final WishService wishlistService;
 
 	@GetMapping("/api/wishlist")
-	public ApiResponse<List<WishDto>> findWishlist(@RequestParam Long memberId) {
-		return new ApiResponse<>(wishlistService.findWishlist(memberId));
+	public CommonResponse<List<WishDto>> findWishlist(@RequestParam Long memberId) {
+		return new CommonResponse<>(wishlistService.findWishlist(memberId));
 	}
 
 	@PostMapping("/api/wishlist")

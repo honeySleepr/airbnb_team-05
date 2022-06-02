@@ -22,9 +22,9 @@ import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
-import project.airbnb.commons.ApiResponse;
 import project.airbnb.member.Member;
 import project.airbnb.member.MemberRepository;
+import project.airbnb.response.CommonResponse;
 
 @SpringBootTest
 @Transactional
@@ -83,7 +83,7 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		ApiResponse<List<SimpleReservationDto>> response = reservationController.showList(
+		CommonResponse<List<SimpleReservationDto>> response = reservationController.showList(
 			memberId);
 
 		// then
@@ -108,7 +108,7 @@ class ReservationControllerTest {
 		// given
 
 		// when
-		ApiResponse<DetailReservationDto> response = reservationController.showDetails(
+		CommonResponse<DetailReservationDto> response = reservationController.showDetails(
 			reservationId1);
 
 		// then

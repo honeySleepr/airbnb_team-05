@@ -15,9 +15,9 @@ import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnbImage.BnbImage;
-import project.airbnb.commons.ApiResponse;
 import project.airbnb.member.Member;
 import project.airbnb.member.MemberRepository;
+import project.airbnb.response.CommonResponse;
 import project.airbnb.wishlist.Wish;
 import project.airbnb.wishlist.WishRepository;
 
@@ -61,7 +61,7 @@ class BnbControllerTest {
 		// given
 
 		// when
-		ApiResponse<DetailBnbDto> response = bnbController.showDetails(savedBnb.getId(),
+		CommonResponse<DetailBnbDto> response = bnbController.showDetails(savedBnb.getId(),
 			savedMember.getId());
 		// then
 		DetailBnbDto data = response.getData();
@@ -79,7 +79,7 @@ class BnbControllerTest {
 
 		// when
 		wishRepository.save(new Wish(null, savedMember, savedBnb));
-		ApiResponse<DetailBnbDto> response = bnbController.showDetails(savedBnb.getId(),
+		CommonResponse<DetailBnbDto> response = bnbController.showDetails(savedBnb.getId(),
 			savedMember.getId());
 
 		// then
