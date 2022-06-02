@@ -29,17 +29,20 @@ final class TumbnailCell: UICollectionViewCell {
         return tumbNailImage
     }()
     
-    private let superHost: UILabel = {
-        let superHost = UILabel()
-        let hostFont = UIFont(name: "Helvetica", size: 24)
-        let superHostAttributedString = NSMutableAttributedString(string: "슈퍼호스트")
-        superHost.attributedText = superHostAttributedString
+    private let superHost: UIButton = {
+        let superHost = UIButton()
+        superHost.setTitle("  슈퍼호스트  ", for: .normal)
+        superHost.setTitleColor(UIColor.black, for: .normal)
+        superHost.backgroundColor = .white
+        superHost.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        superHost.layer.cornerRadius = 10
         return superHost
     }()
     
     private let heart: UIButton = {
         let heart = UIButton()
         heart.setImage(systemName: "heart.fill")
+        heart.tintColor = .systemRed
         return heart
     }()
     
