@@ -44,10 +44,8 @@ final class FavoriteSpotView: UIView {
     }
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0,
-                                                            width: UIScreen.main.bounds.size.width,
-                                                            height: 500),
-        collectionViewLayout: UICollectionViewFlowLayout())
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 500),
+                                              collectionViewLayout: getflowLayout)
         
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = true
@@ -58,6 +56,15 @@ final class FavoriteSpotView: UIView {
         return collectionView
     }()
     
+    private let getflowLayout: UICollectionViewFlowLayout = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.estimatedItemSize = CGSize(width: CGFloat(400), height: CGFloat(343))
+        
+        return flowLayout
+    }()
+    
     func setDataSource(_ dataSource: UICollectionViewDataSource) {
         collectionView.dataSource = dataSource
     }
@@ -66,7 +73,7 @@ final class FavoriteSpotView: UIView {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
