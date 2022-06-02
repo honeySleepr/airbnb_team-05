@@ -44,25 +44,19 @@ final class FavoriteSpotView: UIView {
     }
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 500),
-                                              collectionViewLayout: getflowLayout)
         
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.itemSize = CGSize(width: 350, height: 300)
+        
+        let collectionView = UICollectionView(frame:.zero, collectionViewLayout: flowLayout)
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
         
         collectionView.register(TumbnailCell.self, forCellWithReuseIdentifier: TumbnailCell.identifier)
-        collectionView.register(InformationCell.self, forCellWithReuseIdentifier: InformationCell.identifier)
         return collectionView
-    }()
-    
-    private let getflowLayout: UICollectionViewFlowLayout = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
-        flowLayout.minimumLineSpacing = 5
-        flowLayout.estimatedItemSize = CGSize(width: CGFloat(400), height: CGFloat(343))
-        
-        return flowLayout
     }()
     
     func setDataSource(_ dataSource: UICollectionViewDataSource) {
