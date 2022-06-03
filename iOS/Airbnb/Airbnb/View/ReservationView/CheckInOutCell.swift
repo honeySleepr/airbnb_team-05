@@ -80,26 +80,31 @@ final class CheckInOutCell: UICollectionViewCell {
     private func checkInOutLayout() {
         checkIn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            checkIn.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
-            checkIn.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            checkIn.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            checkIn.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            checkIn.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         checkInDate.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             checkInDate.topAnchor.constraint(equalTo: checkIn.bottomAnchor, constant: 8),
-            checkInDate.leadingAnchor.constraint(equalTo: checkIn.leadingAnchor)
+            checkInDate.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            checkInDate.heightAnchor.constraint(equalToConstant: 22)
         ])
         
         checkOut.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             checkOut.topAnchor.constraint(equalTo: checkInDate.bottomAnchor, constant: 16),
-            checkOut.leadingAnchor.constraint(equalTo: checkIn.leadingAnchor)
+            checkOut.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            checkOut.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         checkOutDate.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             checkOutDate.topAnchor.constraint(equalTo: checkOut.bottomAnchor, constant: 8),
-            checkOutDate.leadingAnchor.constraint(equalTo: checkIn.leadingAnchor)
+            checkOutDate.leadingAnchor.constraint(equalTo: checkIn.leadingAnchor),
+            checkOutDate.heightAnchor.constraint(equalToConstant: 22),
+            checkOutDate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
         ])
     }
 }

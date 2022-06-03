@@ -119,7 +119,8 @@ final class ReservationCell: UICollectionViewCell {
         imageDescription.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageDescription.topAnchor.constraint(equalTo: reservationLocation.bottomAnchor, constant: 8),
-            imageDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            imageDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageDescription.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
         ])
     }
 }
