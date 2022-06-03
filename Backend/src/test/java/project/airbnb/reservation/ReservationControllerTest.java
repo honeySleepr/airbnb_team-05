@@ -48,10 +48,11 @@ class ReservationControllerTest {
 	void setUpBnb() {
 		Bnb bnb = new Bnb(null, new ArrayList<>(), "숙소 이름",
 			new Address("한국", "성남시", "분당구", "성남시 분당구 백현로 20"),
-			50_000L, new BnbOption(1, 2, 1),
-			new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)),
-			BnbType.HOTEL, "숙소 설명", "호스트명", 3,
-			4.5d, 200, new Coordinates(37.333, 127.444));
+			new Coordinates(37.333, 127.444), 50_000L,
+			new BnbOption(1, 2, 1),
+			new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)), BnbType.HOTEL, "숙소 설명",
+			"호스트명",
+			3, 4.5d, 200);
 
 		BnbImage bnbImage1 = new BnbImage(null, null, "http://www.naver111.com");
 		BnbImage bnbImage2 = new BnbImage(null, null, "http://www.naver222.com");
