@@ -22,6 +22,7 @@
 		5B7D0F1828495F81000D9159 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1728495F81000D9159 /* ReservationCell.swift */; };
 		5B7D0F1A28496786000D9159 /* ReservationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1928496786000D9159 /* ReservationDataSource.swift */; };
 		5B7D0F1C28496AD6000D9159 /* CheckInOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1B28496AD6000D9159 /* CheckInOutCell.swift */; };
+		5B7D0F1E2849776B000D9159 /* SummaryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1D2849776B000D9159 /* SummaryInfoCell.swift */; };
 		5BDBAB2428473D7D00A3243D /* FavoriteSpotViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */; };
 		5BDDCC5B283C807300632526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5A283C807300632526 /* AppDelegate.swift */; };
 		5BDDCC5D283C807300632526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5C283C807300632526 /* SceneDelegate.swift */; };
@@ -69,6 +70,7 @@
 		5B7D0F1728495F81000D9159 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
 		5B7D0F1928496786000D9159 /* ReservationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDataSource.swift; sourceTree = "<group>"; };
 		5B7D0F1B28496AD6000D9159 /* CheckInOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInOutCell.swift; sourceTree = "<group>"; };
+		5B7D0F1D2849776B000D9159 /* SummaryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryInfoCell.swift; sourceTree = "<group>"; };
 		5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSpotViewDataSource.swift; sourceTree = "<group>"; };
 		5BDDCC57283C807300632526 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDDCC5A283C807300632526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				5B7D0F1528495E1F000D9159 /* ReservationView.swift */,
 				5B7D0F1728495F81000D9159 /* ReservationCell.swift */,
 				5B7D0F1B28496AD6000D9159 /* CheckInOutCell.swift */,
+				5B7D0F1D2849776B000D9159 /* SummaryInfoCell.swift */,
 			);
 			path = ReservationView;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				5B7D0F1A28496786000D9159 /* ReservationDataSource.swift in Sources */,
 				5B4725642845B59200A115A7 /* TumbnailCell.swift in Sources */,
 				5B7D0F1C28496AD6000D9159 /* CheckInOutCell.swift in Sources */,
+				5B7D0F1E2849776B000D9159 /* SummaryInfoCell.swift in Sources */,
 				5BDDCC8F283C981200632526 /* SearchViewController.swift in Sources */,
 				5B06C2D9283F189A009F4CD4 /* TabBarController.swift in Sources */,
 				5BDBAB2428473D7D00A3243D /* FavoriteSpotViewDataSource.swift in Sources */,
