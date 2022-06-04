@@ -8,7 +8,7 @@ import project.airbnb.bnb.BnbType;
 import project.airbnb.bnb.embedded.Address;
 
 @Getter
-public class DetailBnbDto {
+public class BnbDetailDto {
 
 	private Long bnbId;
 	private String name;
@@ -24,7 +24,7 @@ public class DetailBnbDto {
 	private Long feePerDay;
 	private Boolean isWish;
 
-	public DetailBnbDto(Bnb bnb, boolean isWish) {
+	public BnbDetailDto(Bnb bnb, boolean isWish) {
 		Address address = bnb.getAddress();
 
 		this.bnbId = bnb.getId();

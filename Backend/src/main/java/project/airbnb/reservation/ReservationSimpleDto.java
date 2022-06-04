@@ -2,11 +2,11 @@ package project.airbnb.reservation;
 
 import java.time.LocalDate;
 import lombok.Getter;
-import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.Bnb;
+import project.airbnb.bnb.embedded.Address;
 
 @Getter
-public class SimpleReservationDto {
+public class ReservationSimpleDto {
 
 	private Long reservationId;
 	private String bnbName;
@@ -17,7 +17,8 @@ public class SimpleReservationDto {
 	private String city;
 	private String district;
 
-	public SimpleReservationDto(Reservation reservation) {
+	public ReservationSimpleDto(Reservation reservation) {
+		
 		Bnb bnb = reservation.getBnb();
 		Address address = bnb.getAddress();
 		this.reservationId = reservation.getId();

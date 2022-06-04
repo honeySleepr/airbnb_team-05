@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import project.airbnb.bnb.dto.DetailBnbDto;
+import project.airbnb.bnb.dto.BnbDetailDto;
 import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
@@ -63,10 +63,10 @@ class BnbControllerTest {
 		// given
 
 		// when
-		CommonResponse<DetailBnbDto> response = bnbController.showDetails(savedBnb.getId(),
+		CommonResponse<BnbDetailDto> response = bnbController.showDetails(savedBnb.getId(),
 			savedMember.getId());
 		// then
-		DetailBnbDto data = response.getData();
+		BnbDetailDto data = response.getData();
 		assertThat(data.getBnbId()).isEqualTo(savedBnb.getId());
 		assertThat(data.getName()).isEqualTo("숙소 이름");
 		assertThat(data.getImageUrls().get(0)).isEqualTo("http://www.naver111.com");
@@ -81,11 +81,11 @@ class BnbControllerTest {
 
 		// when
 		wishRepository.save(new Wish(null, savedMember, savedBnb));
-		CommonResponse<DetailBnbDto> response = bnbController.showDetails(savedBnb.getId(),
+		CommonResponse<BnbDetailDto> response = bnbController.showDetails(savedBnb.getId(),
 			savedMember.getId());
 
 		// then
-		DetailBnbDto data = response.getData();
+		BnbDetailDto data = response.getData();
 		assertThat(data.getBnbId()).isEqualTo(savedBnb.getId());
 		assertThat(data.getName()).isEqualTo("숙소 이름");
 		assertThat(data.getImageUrls().get(0)).isEqualTo("http://www.naver111.com");

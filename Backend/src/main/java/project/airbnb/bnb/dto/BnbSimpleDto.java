@@ -3,7 +3,7 @@ package project.airbnb.bnb.dto;
 import lombok.Data;
 
 @Data
-public class SimpleBnbDto {
+public class BnbSimpleDto {
 
 	private Long bnbId;
 	private String imageUrl;

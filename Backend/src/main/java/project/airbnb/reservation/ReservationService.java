@@ -12,19 +12,19 @@ public class ReservationService {
 	private final ReservationRepository reservationRepository;
 
 
-	public List<SimpleReservationDto> showList(Long id) {
+	public List<ReservationSimpleDto> showList(Long id) {
 
 		return reservationRepository.findReservationsByMemberId(id)
 			.stream()
-			.map(SimpleReservationDto::new)
+			.map(ReservationSimpleDto::new)
 			.collect(Collectors.toList());
 	}
 
-	public DetailReservationDto showDetails(Long id) {
+	public ReservationDetailDto showDetails(Long id) {
 		Reservation reservation = reservationRepository.findReservationById(id)
 			.orElseThrow(IllegalArgumentException::new);
 
-		return new DetailReservationDto(reservation);
+		return new ReservationDetailDto(reservation);
 	}
 
 }

@@ -4,12 +4,12 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.Getter;
-import project.airbnb.bnb.embedded.Address;
 import project.airbnb.bnb.Bnb;
 import project.airbnb.bnb.BnbType;
+import project.airbnb.bnb.embedded.Address;
 
 @Getter
-public class DetailReservationDto {
+public class ReservationDetailDto {
 
 	private Long reservationId;
 	private String bnbName;
@@ -25,7 +25,7 @@ public class DetailReservationDto {
 	private Long totalFee;
 
 
-	public DetailReservationDto(Reservation reservation) {
+	public ReservationDetailDto(Reservation reservation) {
 		Bnb bnb = reservation.getBnb();
 		Address address = bnb.getAddress();
 		this.reservationId = reservation.getId();
