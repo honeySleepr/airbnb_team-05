@@ -2,8 +2,6 @@ package project.airbnb.bnb;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.time.LocalTime;
-import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +14,7 @@ import project.airbnb.bnb.embedded.BnbOption;
 import project.airbnb.bnb.embedded.CheckInOutTime;
 import project.airbnb.bnb.embedded.Coordinates;
 import project.airbnb.bnbImage.BnbImage;
+import project.airbnb.TestDataBuilder;
 import project.airbnb.member.Member;
 import project.airbnb.member.MemberRepository;
 import project.airbnb.response.CommonResponse;
@@ -39,21 +38,10 @@ class BnbControllerTest {
 
 	@BeforeEach
 	void setUp() {
-		Bnb bnb = new Bnb(null, new ArrayList<>(), "숙소 이름",
-			new Address("한국", "성남시", "분당구", "성남시 분당구 백현로 20"),
-			new Coordinates(37.333, 127.444), 50_000L,
-			new BnbOption(1, 2, 1),
-			new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)), BnbType.HOTEL, "숙소 설명",
-			"호스트명",
-			3, 4.5d, 200);
-
-		BnbImage bnbImage1 = new BnbImage(null, null, "http://www.naver111.com");
-		BnbImage bnbImage2 = new BnbImage(null, null, "http://www.naver222.com");
-		bnb.saveBnbImage(bnbImage1);
-		bnb.saveBnbImage(bnbImage2);
+		Bnb bnb = TestDataBuilder.getBnbInstance();
 		savedBnb = bnbRepository.save(bnb);
 
-		Member member = new Member(null, "bc");
+		Member member = TestDataBuilder.getMemberInstance("bc");
 		savedMember = memberRepository.save(member);
 	}
 

@@ -176,46 +176,4 @@ public class DataProcessor {
 		}
 	}
 
-	//	private void saveDummyBnb() throws IOException {
-	//		// dummy data 가 저장되어 있는 hotel_data.xlsx 파일을 읽어온다
-	//		FileInputStream file = new FileInputStream(RESOURCE_PATH + "hotel_data.xlsx");
-	//		Sheet sheet;
-	//		try (Workbook workbook = new XSSFWorkbook(file)) {
-	//			// 첫번 째 시트에서 데이터를 가져온다
-	//			sheet = workbook.getSheetAt(0);
-	//		}
-	//		Random random = new Random();
-	//
-	//		// 데이터가 담긴 첫 행(3) 부터 N행 까지 조회하며 dummy Bnb를 생성하고 저장한다
-	//		for (int i = 3; i < 5; i++) {
-	//
-	//			Row row = sheet.getRow(i);
-	//
-	//			// [row.getCell index : data] =  1:지역1(서울시), 2:지역2(강남구), 3:업체명, 4:전체주소, 5:위도, 6:경도
-	//			// 저장된 값은 사용하고, 나머지 값은 랜덤하게 돌린다.
-	//			// TODO: 위도, 경도는 어떻게 저장하는게 좋을지 상의하기
-	//			Bnb bnb = new Bnb(null, new ArrayList<>(), row.getCell(3).getStringCellValue(),
-	//				new Address("한국", row.getCell(1).getStringCellValue(),
-	//					row.getCell(2).getStringCellValue(),
-	//					row.getCell(4).getStringCellValue()),
-	//				20_000 + 1000L * random.nextInt(81),
-	//				new BnbOption(1 + random.nextInt(3), 1 + random.nextInt(4), 1 + random.nextInt(3)),
-	//				new CheckInOutTime(LocalTime.of(15, 0), LocalTime.of(11, 0)),
-	//				BnbType.values()[random.nextInt(3)], "숙소 설명", "호스트명",
-	//				2 + random.nextInt(3),
-	//				3 + (Math.round(random.nextInt(21) * 0.1 * 10) / 10d),
-	//				random.nextInt(1000));
-	//
-	//			// 각 숙소당 3개의 랜덤 이미지를 저장한다. S3에 100개의 이미지를 넣고 랜덤으로 돌리고자 한다
-	//			// TODO: S3에 이미지 채워넣고 파일이름 번호순으로 나열하기
-	//			for (int j = 0; j < 3; j++) {
-	//				BnbImage bnbImage = new BnbImage(null, null,
-	//					S3_IMAGE_URL + (1 + random.nextInt(100)));
-	//				bnb.saveBnbImage(bnbImage);
-	//			}
-	//
-	//			bnbRepository.save(bnb);
-	//		}
-	//	}
-
 }
