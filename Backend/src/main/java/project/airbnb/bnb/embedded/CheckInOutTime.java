@@ -1,4 +1,4 @@
-package project.airbnb.bnb;
+package project.airbnb.bnb.embedded;
 
 import java.time.LocalTime;
 import javax.persistence.Embeddable;

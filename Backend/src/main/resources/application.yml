@@ -1,4 +1,4 @@
 spring:
   profiles:
-    default: ${profile}
+    active: ${profile}
     include: secret
