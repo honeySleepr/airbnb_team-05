@@ -17,7 +17,13 @@
 		5B4725622845ACC000A115A7 /* FavoriteSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */; };
 		5B4725642845B59200A115A7 /* TumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725632845B59200A115A7 /* TumbnailCell.swift */; };
 		5B4725672845BA3200A115A7 /* heartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725662845BA3200A115A7 /* heartButton.swift */; };
-		5B4725692845C17200A115A7 /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725682845C17200A115A7 /* InformationCell.swift */; };
+		5B7D0F1328495875000D9159 /* subTumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1228495875000D9159 /* subTumbnail.swift */; };
+		5B7D0F1628495E1F000D9159 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1528495E1F000D9159 /* ReservationView.swift */; };
+		5B7D0F1828495F81000D9159 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1728495F81000D9159 /* ReservationCell.swift */; };
+		5B7D0F1A28496786000D9159 /* ReservationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1928496786000D9159 /* ReservationDataSource.swift */; };
+		5B7D0F1C28496AD6000D9159 /* CheckInOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1B28496AD6000D9159 /* CheckInOutCell.swift */; };
+		5B7D0F1E2849776B000D9159 /* SummaryInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0F1D2849776B000D9159 /* SummaryInfoCell.swift */; };
+		5BDBAB2428473D7D00A3243D /* FavoriteSpotViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */; };
 		5BDDCC5B283C807300632526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5A283C807300632526 /* AppDelegate.swift */; };
 		5BDDCC5D283C807300632526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5C283C807300632526 /* SceneDelegate.swift */; };
 		5BDDCC5F283C807300632526 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5E283C807300632526 /* WishlistViewController.swift */; };
@@ -59,7 +65,13 @@
 		5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSpotView.swift; sourceTree = "<group>"; };
 		5B4725632845B59200A115A7 /* TumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbnailCell.swift; sourceTree = "<group>"; };
 		5B4725662845BA3200A115A7 /* heartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heartButton.swift; sourceTree = "<group>"; };
-		5B4725682845C17200A115A7 /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
+		5B7D0F1228495875000D9159 /* subTumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subTumbnail.swift; sourceTree = "<group>"; };
+		5B7D0F1528495E1F000D9159 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		5B7D0F1728495F81000D9159 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
+		5B7D0F1928496786000D9159 /* ReservationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDataSource.swift; sourceTree = "<group>"; };
+		5B7D0F1B28496AD6000D9159 /* CheckInOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInOutCell.swift; sourceTree = "<group>"; };
+		5B7D0F1D2849776B000D9159 /* SummaryInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryInfoCell.swift; sourceTree = "<group>"; };
+		5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSpotViewDataSource.swift; sourceTree = "<group>"; };
 		5BDDCC57283C807300632526 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDDCC5A283C807300632526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BDDCC5C283C807300632526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */,
+				5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */,
+				5B7D0F1928496786000D9159 /* ReservationDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -152,7 +166,7 @@
 			children = (
 				5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */,
 				5B4725632845B59200A115A7 /* TumbnailCell.swift */,
-				5B4725682845C17200A115A7 /* InformationCell.swift */,
+				5B7D0F1228495875000D9159 /* subTumbnail.swift */,
 			);
 			path = WishlistView;
 			sourceTree = "<group>";
@@ -163,6 +177,17 @@
 				5B4725662845BA3200A115A7 /* heartButton.swift */,
 			);
 			path = "Extension + UIButton";
+			sourceTree = "<group>";
+		};
+		5B7D0F1428495DF4000D9159 /* ReservationView */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D0F1528495E1F000D9159 /* ReservationView.swift */,
+				5B7D0F1728495F81000D9159 /* ReservationCell.swift */,
+				5B7D0F1B28496AD6000D9159 /* CheckInOutCell.swift */,
+				5B7D0F1D2849776B000D9159 /* SummaryInfoCell.swift */,
+			);
+			path = ReservationView;
 			sourceTree = "<group>";
 		};
 		5BDDCC4E283C807300632526 = {
@@ -241,6 +266,7 @@
 				5B06C2E2284067D9009F4CD4 /* Utility */,
 				5B06C2E8284088C0009F4CD4 /* SearchView */,
 				5B4725602845AC5300A115A7 /* WishlistView */,
+				5B7D0F1428495DF4000D9159 /* ReservationView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,12 +412,17 @@
 			files = (
 				5BDDCC91283C983700632526 /* ReservationViewController.swift in Sources */,
 				5BDDCC5F283C807300632526 /* WishlistViewController.swift in Sources */,
+				5B7D0F1828495F81000D9159 /* ReservationCell.swift in Sources */,
+				5B7D0F1628495E1F000D9159 /* ReservationView.swift in Sources */,
 				5B06C2EC2840899B009F4CD4 /* LivingSpotCell.swift in Sources */,
-				5B4725692845C17200A115A7 /* InformationCell.swift in Sources */,
 				5BDDCC5B283C807300632526 /* AppDelegate.swift in Sources */,
+				5B7D0F1A28496786000D9159 /* ReservationDataSource.swift in Sources */,
 				5B4725642845B59200A115A7 /* TumbnailCell.swift in Sources */,
+				5B7D0F1C28496AD6000D9159 /* CheckInOutCell.swift in Sources */,
+				5B7D0F1E2849776B000D9159 /* SummaryInfoCell.swift in Sources */,
 				5BDDCC8F283C981200632526 /* SearchViewController.swift in Sources */,
 				5B06C2D9283F189A009F4CD4 /* TabBarController.swift in Sources */,
+				5BDBAB2428473D7D00A3243D /* FavoriteSpotViewDataSource.swift in Sources */,
 				5B06C2E7284081EC009F4CD4 /* SearchViewDataSource.swift in Sources */,
 				5B06C2E4284067F7009F4CD4 /* HomeViewLayout.swift in Sources */,
 				5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */,
@@ -400,6 +431,7 @@
 				5B4725672845BA3200A115A7 /* heartButton.swift in Sources */,
 				5B4725622845ACC000A115A7 /* FavoriteSpotView.swift in Sources */,
 				5BDDCC93283C9D9800632526 /* HomeView.swift in Sources */,
+				5B7D0F1328495875000D9159 /* subTumbnail.swift in Sources */,
 				5BDDCC5D283C807300632526 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

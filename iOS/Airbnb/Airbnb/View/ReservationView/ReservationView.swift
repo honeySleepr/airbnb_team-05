@@ -1,20 +1,19 @@
 //
-//  FavoriteSpot.swift
+//  ReservationView.swift
 //  Airbnb
 //
-//  Created by Jason on 2022/05/31.
+//  Created by Jason on 2022/06/03.
 //
 
 import UIKit
 
-final class FavoriteSpotView: UIView {
+final class ReservationView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         navigationBarLayout()
-        favoriteSpotViewConfiguration()
-
+        reservationViewConfiguration()
     }
     
     @available(*, unavailable)
@@ -25,7 +24,7 @@ final class FavoriteSpotView: UIView {
     
     let navigationBar: UINavigationBar = {
         let navigationBar = UINavigationBar()
-        let navigationItem = UINavigationItem(title: "위시리스트")
+        let navigationItem = UINavigationItem(title: "예약")
         navigationBar.backgroundColor = .white
         navigationBar.setItems([navigationItem], animated: true)
         return navigationBar
@@ -46,17 +45,19 @@ final class FavoriteSpotView: UIView {
     private lazy var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
+        flowLayout.sectionInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 0.0, right: 10.0)
         flowLayout.minimumLineSpacing = 5
-        flowLayout.itemSize = CGSize(width: 350, height: 300)
+        flowLayout.estimatedItemSize = CGSize(width: 350, height: 240)
         
         let collectionView = UICollectionView(frame:.zero, collectionViewLayout: flowLayout)
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
         
-        collectionView.register(TumbnailCell.self, forCellWithReuseIdentifier: TumbnailCell.identifier)
-        collectionView.register(subTumbnailCell.self, forCellWithReuseIdentifier: subTumbnailCell.identifier)
+        collectionView.register(ReservationCell.self, forCellWithReuseIdentifier: ReservationCell.identifier)
+        collectionView.register(CheckInOutCell.self, forCellWithReuseIdentifier: CheckInOutCell.identifier)
+        collectionView.register(SummaryInfoCell.self, forCellWithReuseIdentifier: SummaryInfoCell.identifier)
+        
         return collectionView
     }()
     
@@ -64,7 +65,7 @@ final class FavoriteSpotView: UIView {
         collectionView.dataSource = dataSource
     }
     
-    func favoriteSpotViewConfiguration() {
+    func reservationViewConfiguration() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

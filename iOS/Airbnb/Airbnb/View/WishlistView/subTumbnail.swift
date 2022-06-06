@@ -1,21 +1,21 @@
 //
-//  TumbnailCell.swift
+//  subTumbnail.swift
 //  Airbnb
 //
-//  Created by Jason on 2022/05/31.
+//  Created by Jason on 2022/06/03.
 //
 
 import UIKit
 
-final class TumbnailCell: UICollectionViewCell {
+final class subTumbnailCell: UICollectionViewCell {
     
-    static let identifier = "TumbnailCell"
+    static let identifier = "subTumbnailCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         appendSubView()
-        tumbnailLayout()
-        informationLayout()
+        subtumbnailLayout()
+        subinformationLayout()
     }
     
     @available(*, unavailable)
@@ -25,7 +25,7 @@ final class TumbnailCell: UICollectionViewCell {
         
     }
     
-    private let tumbNailImage: UIImageView = {
+    private let subTumbNailImage: UIImageView = {
         let tumbNailImage = UIImageView()
         return tumbNailImage
     }()
@@ -54,10 +54,10 @@ final class TumbnailCell: UICollectionViewCell {
         return star
     }()
     
-    private let scoreLabel: UILabel = {
+    private let subScoreLabel: UILabel = {
         let score = UILabel()
         score.numberOfLines = 0
-        let scoreAttributedString = NSMutableAttributedString(string: "(후기 50개)")
+        let scoreAttributedString = NSMutableAttributedString(string: "(후기 157개)")
         let length = scoreAttributedString.length
         scoreAttributedString.addAttributes([.foregroundColor:UIColor.black,
                                              .font: UIFont.systemFont(ofSize: 12, weight: .light)],
@@ -66,10 +66,10 @@ final class TumbnailCell: UICollectionViewCell {
         return score
     }()
     
-    private let reviewLabel: UILabel = {
+    private let subReviewLabel: UILabel = {
         let review = UILabel()
         review.numberOfLines = 0
-        let reviewAttributedString = NSMutableAttributedString(string: "4.98")
+        let reviewAttributedString = NSMutableAttributedString(string: "4.96")
         let length = reviewAttributedString.length
         reviewAttributedString.addAttributes([.foregroundColor: UIColor.black,
                                         .font: UIFont.systemFont(ofSize: 12, weight: .light)],
@@ -78,10 +78,10 @@ final class TumbnailCell: UICollectionViewCell {
         return review
     }()
     
-    private let lodgingLabel: UILabel = {
+    private let subLodgingLabel: UILabel = {
         let lodging = UILabel()
         lodging.numberOfLines = 0
-        let lodgingAttributedString = NSMutableAttributedString(string: "비담집, 비우고담은집(집전체, 최대4인)")
+        let lodgingAttributedString = NSMutableAttributedString(string: "HOTEL강릉세인트존스호텔 풀오션뷰 ...")
         let length = lodgingAttributedString.length
         lodgingAttributedString.addAttributes([.foregroundColor: UIColor.black,
                                                .font: UIFont.systemFont(ofSize: 20, weight: .bold)],
@@ -90,10 +90,10 @@ final class TumbnailCell: UICollectionViewCell {
         return lodging
     }()
     
-    private let priceLabel: UILabel = {
+    private let subPriceLabel: UILabel = {
        let price = UILabel()
         price.numberOfLines = 0
-        let priceAttributedString = NSMutableAttributedString(string: "₩308,571 / 박")
+        let priceAttributedString = NSMutableAttributedString(string: "₩131,429 / 박")
         let length = priceAttributedString.length
         priceAttributedString.addAttributes([.foregroundColor: UIColor.black,
                                              .font: UIFont.systemFont(ofSize: 17, weight: .bold)],
@@ -104,31 +104,31 @@ final class TumbnailCell: UICollectionViewCell {
     
     
     func configure(image: UIImage?, score: String?, review: String?, lodging: String?, price: String?) {
-        tumbNailImage.image = image
-        scoreLabel.text = score
-        reviewLabel.text = review
-        lodgingLabel.text = lodging
-        priceLabel.text = price
+        subTumbNailImage.image = image
+        subScoreLabel.text = score
+        subReviewLabel.text = review
+        subLodgingLabel.text = lodging
+        subPriceLabel.text = price
     }
     
     private func appendSubView() {
-        contentView.addSubview(tumbNailImage)
+        contentView.addSubview(subTumbNailImage)
         contentView.addSubview(superHost)
         contentView.addSubview(heart)
         contentView.addSubview(starButton)
-        contentView.addSubview(scoreLabel)
-        contentView.addSubview(reviewLabel)
-        contentView.addSubview(lodgingLabel)
-        contentView.addSubview(priceLabel)
+        contentView.addSubview(subScoreLabel)
+        contentView.addSubview(subReviewLabel)
+        contentView.addSubview(subLodgingLabel)
+        contentView.addSubview(subPriceLabel)
     }
     
-    private func tumbnailLayout() {
-        tumbNailImage.translatesAutoresizingMaskIntoConstraints = false
+    private func subtumbnailLayout() {
+        subTumbNailImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tumbNailImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-            tumbNailImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            tumbNailImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            tumbNailImage.heightAnchor.constraint(equalToConstant: 200)
+            subTumbNailImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            subTumbNailImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            subTumbNailImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            subTumbNailImage.heightAnchor.constraint(equalToConstant: 200)
         ])
         
         superHost.translatesAutoresizingMaskIntoConstraints = false
@@ -144,42 +144,43 @@ final class TumbnailCell: UICollectionViewCell {
         ])
     }
     
-    private func informationLayout() {
+    private func subinformationLayout() {
         starButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            starButton.topAnchor.constraint(equalTo: tumbNailImage.bottomAnchor, constant: 10),
-            starButton.leadingAnchor.constraint(equalTo: tumbNailImage.leadingAnchor),
-            starButton.bottomAnchor.constraint(equalTo: scoreLabel.bottomAnchor)
+            starButton.topAnchor.constraint(equalTo: subTumbNailImage.bottomAnchor, constant: 10),
+            starButton.leadingAnchor.constraint(equalTo: subTumbNailImage.leadingAnchor),
+            starButton.bottomAnchor.constraint(equalTo: subScoreLabel.bottomAnchor)
         ])
         
-        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        subScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            scoreLabel.topAnchor.constraint(equalTo: tumbNailImage.bottomAnchor, constant: 10),
-            scoreLabel.leadingAnchor.constraint(equalTo: starButton.trailingAnchor, constant: 4),
+            subScoreLabel.topAnchor.constraint(equalTo: subTumbNailImage.bottomAnchor, constant: 10),
+            subScoreLabel.leadingAnchor.constraint(equalTo: starButton.trailingAnchor, constant: 4),
         ])
 
-        reviewLabel.translatesAutoresizingMaskIntoConstraints = false
+        subReviewLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            reviewLabel.topAnchor.constraint(equalTo: tumbNailImage.bottomAnchor, constant: 10),
-            reviewLabel.leadingAnchor.constraint(equalTo: scoreLabel.trailingAnchor, constant: 4),
-            reviewLabel.bottomAnchor.constraint(equalTo: scoreLabel.bottomAnchor)
+            subReviewLabel.topAnchor.constraint(equalTo: subTumbNailImage.bottomAnchor, constant: 10),
+            subReviewLabel.leadingAnchor.constraint(equalTo: subScoreLabel.trailingAnchor, constant: 4),
+            subReviewLabel.bottomAnchor.constraint(equalTo: subScoreLabel.bottomAnchor)
         ])
 
-        lodgingLabel.translatesAutoresizingMaskIntoConstraints = false
+        subLodgingLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            lodgingLabel.topAnchor.constraint(equalTo: starButton.bottomAnchor, constant: 9),
-            lodgingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            lodgingLabel.heightAnchor.constraint(equalTo: reviewLabel.heightAnchor)
+            subLodgingLabel.topAnchor.constraint(equalTo: starButton.bottomAnchor, constant: 9),
+            subLodgingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            subLodgingLabel.heightAnchor.constraint(equalTo: subReviewLabel.heightAnchor)
             
         ])
 
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        subPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            priceLabel.topAnchor.constraint(equalTo: lodgingLabel.bottomAnchor, constant: 8),
-            priceLabel.leadingAnchor.constraint(equalTo: starButton.leadingAnchor),
-            priceLabel.heightAnchor.constraint(equalTo: reviewLabel.heightAnchor),
-            priceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            subPriceLabel.topAnchor.constraint(equalTo: subLodgingLabel.bottomAnchor, constant: 8),
+            subPriceLabel.leadingAnchor.constraint(equalTo: starButton.leadingAnchor),
+            subPriceLabel.heightAnchor.constraint(equalTo: subReviewLabel.heightAnchor),
+            subPriceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 
 }
+
