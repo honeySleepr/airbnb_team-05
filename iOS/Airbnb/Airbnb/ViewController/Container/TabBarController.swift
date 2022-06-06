@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    let searchViewController = SearchViewController()
+    let homeViewController = HomeViewController()
     let wishlistViewController = WishlistViewController()
     let reservationViewController = ReservationViewController()
     
@@ -23,7 +23,7 @@ class TabBarController: UITabBarController {
 private extension TabBarController {
     
     func setTabBarItems() {
-        let navigationViewController = UINavigationController(rootViewController: searchViewController)
+        let navigationViewController = UINavigationController(rootViewController: homeViewController)
         
         navigationViewController.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 0)
         wishlistViewController.tabBarItem = UITabBarItem(title: "위시리스트", image: UIImage(systemName: "heart"), tag: 1)

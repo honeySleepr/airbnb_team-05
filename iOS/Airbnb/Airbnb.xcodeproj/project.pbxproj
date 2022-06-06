@@ -11,7 +11,7 @@
 		5B06C2DE283F4C92009F4CD4 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */; };
 		5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */; };
 		5B06C2E4284067F7009F4CD4 /* HomeViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E3284067F7009F4CD4 /* HomeViewLayout.swift */; };
-		5B06C2E7284081EC009F4CD4 /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */; };
+		5B06C2E7284081EC009F4CD4 /* HomeViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E6284081EC009F4CD4 /* HomeViewDataSource.swift */; };
 		5B06C2EA2840896C009F4CD4 /* NearbyDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */; };
 		5B06C2EC2840899B009F4CD4 /* LivingSpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */; };
 		5B4725622845ACC000A115A7 /* FavoriteSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */; };
@@ -32,7 +32,7 @@
 		5BDDCC72283C807600632526 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC71283C807600632526 /* AirbnbTests.swift */; };
 		5BDDCC7C283C807600632526 /* AirbnbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC7B283C807600632526 /* AirbnbUITests.swift */; };
 		5BDDCC7E283C807600632526 /* AirbnbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC7D283C807600632526 /* AirbnbUITestsLaunchTests.swift */; };
-		5BDDCC8F283C981200632526 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC8E283C981200632526 /* SearchViewController.swift */; };
+		5BDDCC8F283C981200632526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC8E283C981200632526 /* HomeViewController.swift */; };
 		5BDDCC91283C983700632526 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC90283C983700632526 /* ReservationViewController.swift */; };
 		5BDDCC93283C9D9800632526 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC92283C9D9800632526 /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCell.swift; sourceTree = "<group>"; };
 		5B06C2E3284067F7009F4CD4 /* HomeViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewLayout.swift; sourceTree = "<group>"; };
-		5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewDataSource.swift; sourceTree = "<group>"; };
+		5B06C2E6284081EC009F4CD4 /* HomeViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataSource.swift; sourceTree = "<group>"; };
 		5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationCell.swift; sourceTree = "<group>"; };
 		5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingSpotCell.swift; sourceTree = "<group>"; };
 		5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSpotView.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		5BDDCC77283C807600632526 /* AirbnbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDDCC7B283C807600632526 /* AirbnbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITests.swift; sourceTree = "<group>"; };
 		5BDDCC7D283C807600632526 /* AirbnbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5BDDCC8E283C981200632526 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5BDDCC8E283C981200632526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5BDDCC90283C983700632526 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5BDDCC92283C9D9800632526 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +125,7 @@
 		5B06C2DF283F5181009F4CD4 /* TabBarItemViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5BDDCC8E283C981200632526 /* SearchViewController.swift */,
+				5BDDCC8E283C981200632526 /* HomeViewController.swift */,
 				5BDDCC5E283C807300632526 /* WishlistViewController.swift */,
 				5BDDCC90283C983700632526 /* ReservationViewController.swift */,
 			);
@@ -143,7 +143,7 @@
 		5B06C2E5284081D1009F4CD4 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				5B06C2E6284081EC009F4CD4 /* SearchViewDataSource.swift */,
+				5B06C2E6284081EC009F4CD4 /* HomeViewDataSource.swift */,
 				5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */,
 				5B7D0F1928496786000D9159 /* ReservationDataSource.swift */,
 			);
@@ -420,10 +420,10 @@
 				5B4725642845B59200A115A7 /* TumbnailCell.swift in Sources */,
 				5B7D0F1C28496AD6000D9159 /* CheckInOutCell.swift in Sources */,
 				5B7D0F1E2849776B000D9159 /* SummaryInfoCell.swift in Sources */,
-				5BDDCC8F283C981200632526 /* SearchViewController.swift in Sources */,
+				5BDDCC8F283C981200632526 /* HomeViewController.swift in Sources */,
 				5B06C2D9283F189A009F4CD4 /* TabBarController.swift in Sources */,
 				5BDBAB2428473D7D00A3243D /* FavoriteSpotViewDataSource.swift in Sources */,
-				5B06C2E7284081EC009F4CD4 /* SearchViewDataSource.swift in Sources */,
+				5B06C2E7284081EC009F4CD4 /* HomeViewDataSource.swift in Sources */,
 				5B06C2E4284067F7009F4CD4 /* HomeViewLayout.swift in Sources */,
 				5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */,
 				5B06C2DE283F4C92009F4CD4 /* CollectionHeaderView.swift in Sources */,

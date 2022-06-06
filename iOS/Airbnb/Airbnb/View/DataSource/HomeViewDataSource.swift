@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewDataSource: NSObject, UICollectionViewDataSource {
+final class HomeViewDataSource: NSObject, UICollectionViewDataSource {
     
     var homeData: [MyHomeSection] = [
         .advertising([MyHomeSection.advertisingItem.init(image: UIImage(named: "mainImage") ?? UIImage())] ),

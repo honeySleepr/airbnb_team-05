@@ -7,10 +7,10 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private lazy var homeView = HomeView(frame: view.frame)
-    private let dataSource = SearchViewDataSource()
+    private let dataSource = HomeViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,6 @@ class SearchViewController: UIViewController {
         searchController.automaticallyShowsCancelButton = false
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
-        self.navigationItem.title = "숙소 찾기"
     }
 
 }
