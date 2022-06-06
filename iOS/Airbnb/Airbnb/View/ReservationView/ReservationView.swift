@@ -42,7 +42,7 @@ final class ReservationView: UIView {
         ])
     }
     
-    private lazy var collectionView: UICollectionView = {
+    private var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 0.0, right: 10.0)
