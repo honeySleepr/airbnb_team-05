@@ -150,7 +150,7 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
-		5B06C2E8284088C0009F4CD4 /* SearchView */ = {
+		5B06C2E8284088C0009F4CD4 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
 				5BDDCC92283C9D9800632526 /* HomeView.swift */,
@@ -158,7 +158,7 @@
 				5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */,
 				5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */,
 			);
-			path = SearchView;
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		5B4725602845AC5300A115A7 /* WishlistView */ = {
@@ -264,7 +264,7 @@
 				5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */,
 				5B06C2E5284081D1009F4CD4 /* DataSource */,
 				5B06C2E2284067D9009F4CD4 /* Utility */,
-				5B06C2E8284088C0009F4CD4 /* SearchView */,
+				5B06C2E8284088C0009F4CD4 /* HomeView */,
 				5B4725602845AC5300A115A7 /* WishlistView */,
 				5B7D0F1428495DF4000D9159 /* ReservationView */,
 			);
