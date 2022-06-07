@@ -11,7 +11,8 @@ final class SearchView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = .white
+        searchViewConfiguration()
     }
     
     @available(*, unavailable)
@@ -20,19 +21,41 @@ final class SearchView: UIView {
         fatalError()
     }
     
-    private var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 0.0, right: 10.0)
-        flowLayout.minimumLineSpacing = 5
-        flowLayout.estimatedItemSize = CGSize(width: 350, height: 240)
+        flowLayout.itemSize = CGSize(width: 350, height: 300)
         
-        let collectionView = UICollectionView(frame:.zero, collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame:.zero, collectionViewLayout: self.getSearchViewLayout())
         collectionView.isScrollEnabled = true
         collectionView.showsVerticalScrollIndicator = true
         collectionView.clipsToBounds = true
+        collectionView.register(CollectionHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: CollectionHeaderView.identifier)
+        collectionView.register(SearchViewCell.self, forCellWithReuseIdentifier: SearchViewCell.identifier)
         
         return collectionView
     }()
     
+    func setupCollectionViewDelegate(_ dataSource: UICollectionViewDataSource) {
+        collectionView.dataSource = dataSource
+    }
+    
+    private func searchViewConfiguration() {
+        addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    func getSearchViewLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout { (sectionIndex: Int, _ ) -> NSCollectionLayoutSection? in
+            return SearchViewLayout(sectionIndex: sectionIndex).create()
+        }
+    }
 }
