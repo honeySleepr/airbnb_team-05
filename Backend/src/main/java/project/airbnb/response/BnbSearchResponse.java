@@ -14,6 +14,8 @@ public class BnbSearchResponse<T> {
 	private LocalDate checkIn;
 	private LocalDate checkOut;
 	private Integer guestNumber;
+	private Integer minFee;
+	private Integer maxFee;
 	private Long count;
 	private Boolean isLast;
 	private Integer pageSize;
@@ -25,6 +27,8 @@ public class BnbSearchResponse<T> {
 		this.checkIn = dto.getCheckIn();
 		this.checkOut = dto.getCheckOut();
 		this.guestNumber = dto.getGuestNumber();
+		this.minFee = dto.getMinFee();
+		this.maxFee = dto.getMaxFee();
 		this.count = page.getTotalElements();
 		this.isLast = page.isLast();
 		this.pageSize = page.getSize();

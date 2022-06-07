@@ -20,7 +20,7 @@ public class SearchQueryDto {
 	private LocalDate checkIn;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate checkOut;
-	@Min(12000)
+	@Min(10000)
 	private Integer minFee;
 	@Max(1000000)
 	private Integer maxFee;

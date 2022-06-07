@@ -42,7 +42,7 @@ public class BnbController {
 			searchQueryDto.setCheckOut(LocalDate.now().plusDays(7));
 		}
 		if (searchQueryDto.getMinFee() == null) {
-			searchQueryDto.setMinFee(12_000);
+			searchQueryDto.setMinFee(10_000);
 			searchQueryDto.setMaxFee(1_000_000);
 		}
 

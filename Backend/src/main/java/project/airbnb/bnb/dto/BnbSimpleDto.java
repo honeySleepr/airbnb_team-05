@@ -14,6 +14,8 @@ public class BnbSimpleDto {
 	private String bnbName;
 	private Long fee;
 	private Long totalFee;
+	private Integer maxGuestNumber;
+	private String fullAddress;
 
 	public BnbSimpleDto(Bnb bnb, SearchQueryDto searchQueryDto) {
 		this.bnbId = bnb.getId();
@@ -25,6 +27,8 @@ public class BnbSimpleDto {
 		Period stayPeriod = Period.between(searchQueryDto.getCheckIn(),
 			searchQueryDto.getCheckOut());
 		this.totalFee = stayPeriod.getDays() * bnb.getFee();
+		this.maxGuestNumber = bnb.getMaxGuestNumber();
+		this.fullAddress = bnb.getAddress().getFullAddress();
 	}
 
 }
