@@ -18,7 +18,7 @@ import project.airbnb.reservation.Reservation;
 public class TestDataBuilder {
 
 	public static Bnb getBnbInstance() {
-		Bnb bnb = new Bnb(null, new ArrayList<>(), "숙소 이름",
+		Bnb bnb = new Bnb(null, new ArrayList<>(), new ArrayList<>(), "숙소 이름",
 			new Address("한국", "성남시", "분당구", "성남시 분당구 백현로 20"),
 			new Coordinates(37.333, 127.444), 50_000L,
 			new BnbOption(1, 2, 1),
