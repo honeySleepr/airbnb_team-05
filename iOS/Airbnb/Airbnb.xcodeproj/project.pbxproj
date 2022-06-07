@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F584EE2F521CA3D9B4FDB01 /* Pods_AirbnbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC24D93FDC31EC0EC1DE9E55 /* Pods_AirbnbTests.framework */; };
 		5B06C2D9283F189A009F4CD4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2D8283F189A009F4CD4 /* TabBarController.swift */; };
 		5B06C2DE283F4C92009F4CD4 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */; };
 		5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */; };
@@ -40,6 +41,8 @@
 		5BDDCC8F283C981200632526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC8E283C981200632526 /* HomeViewController.swift */; };
 		5BDDCC91283C983700632526 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC90283C983700632526 /* ReservationViewController.swift */; };
 		5BDDCC93283C9D9800632526 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC92283C9D9800632526 /* HomeView.swift */; };
+		7C9D57059E094B3EA2556D6C /* Pods_Airbnb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9308226CCA716C4C268AD253 /* Pods_Airbnb.framework */; };
+		8F1D2A9DB06A1EF2F6ECCC80 /* Pods_Airbnb_AirbnbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D53584B72BE02D3194681C /* Pods_Airbnb_AirbnbUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C4BFBD34C93AC24288AC74F /* Pods-AirbnbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbTests.release.xcconfig"; path = "Target Support Files/Pods-AirbnbTests/Pods-AirbnbTests.release.xcconfig"; sourceTree = "<group>"; };
+		34326D6057B598B251117DDB /* Pods-Airbnb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airbnb.release.xcconfig"; path = "Target Support Files/Pods-Airbnb/Pods-Airbnb.release.xcconfig"; sourceTree = "<group>"; };
 		5B06C2D8283F189A009F4CD4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5B06C2DD283F4C92009F4CD4 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		5B06C2E0283F5887009F4CD4 /* AdvertisingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingCell.swift; sourceTree = "<group>"; };
@@ -97,6 +102,13 @@
 		5BDDCC8E283C981200632526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5BDDCC90283C983700632526 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5BDDCC92283C9D9800632526 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		83A8635572966C86A84A9627 /* Pods-Airbnb-AirbnbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airbnb-AirbnbUITests.release.xcconfig"; path = "Target Support Files/Pods-Airbnb-AirbnbUITests/Pods-Airbnb-AirbnbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9308226CCA716C4C268AD253 /* Pods_Airbnb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airbnb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B12CCFE280F4B29F2101AE /* Pods-Airbnb-AirbnbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airbnb-AirbnbUITests.debug.xcconfig"; path = "Target Support Files/Pods-Airbnb-AirbnbUITests/Pods-Airbnb-AirbnbUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD7BB982D9F6B695F3340396 /* Pods-Airbnb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airbnb.debug.xcconfig"; path = "Target Support Files/Pods-Airbnb/Pods-Airbnb.debug.xcconfig"; sourceTree = "<group>"; };
+		B9CF2A333DC2BEA8B60797C1 /* Pods-AirbnbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbTests.debug.xcconfig"; path = "Target Support Files/Pods-AirbnbTests/Pods-AirbnbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC24D93FDC31EC0EC1DE9E55 /* Pods_AirbnbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4D53584B72BE02D3194681C /* Pods_Airbnb_AirbnbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Airbnb_AirbnbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9D57059E094B3EA2556D6C /* Pods_Airbnb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F584EE2F521CA3D9B4FDB01 /* Pods_AirbnbTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +132,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1D2A9DB06A1EF2F6ECCC80 /* Pods_Airbnb_AirbnbUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28408172135E817E524A55FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD7BB982D9F6B695F3340396 /* Pods-Airbnb.debug.xcconfig */,
+				34326D6057B598B251117DDB /* Pods-Airbnb.release.xcconfig */,
+				93B12CCFE280F4B29F2101AE /* Pods-Airbnb-AirbnbUITests.debug.xcconfig */,
+				83A8635572966C86A84A9627 /* Pods-Airbnb-AirbnbUITests.release.xcconfig */,
+				B9CF2A333DC2BEA8B60797C1 /* Pods-AirbnbTests.debug.xcconfig */,
+				0C4BFBD34C93AC24288AC74F /* Pods-AirbnbTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5B06C2DA283F18A2009F4CD4 /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +247,8 @@
 				5BDDCC70283C807600632526 /* AirbnbTests */,
 				5BDDCC7A283C807600632526 /* AirbnbUITests */,
 				5BDDCC58283C807300632526 /* Products */,
+				28408172135E817E524A55FC /* Pods */,
+				6C4FADCB950005BD102F13ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,6 +334,16 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		6C4FADCB950005BD102F13ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9308226CCA716C4C268AD253 /* Pods_Airbnb.framework */,
+				E4D53584B72BE02D3194681C /* Pods_Airbnb_AirbnbUITests.framework */,
+				DC24D93FDC31EC0EC1DE9E55 /* Pods_AirbnbTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +351,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BDDCC81283C807600632526 /* Build configuration list for PBXNativeTarget "Airbnb" */;
 			buildPhases = (
+				75171177A3244DB382C0A352 /* [CP] Check Pods Manifest.lock */,
 				5BDDCC53283C807300632526 /* Sources */,
 				5BDDCC54283C807300632526 /* Frameworks */,
 				5BDDCC55283C807300632526 /* Resources */,
@@ -327,6 +369,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BDDCC84283C807600632526 /* Build configuration list for PBXNativeTarget "AirbnbTests" */;
 			buildPhases = (
+				345E733DA513C6E6AD6D3F01 /* [CP] Check Pods Manifest.lock */,
 				5BDDCC69283C807600632526 /* Sources */,
 				5BDDCC6A283C807600632526 /* Frameworks */,
 				5BDDCC6B283C807600632526 /* Resources */,
@@ -345,6 +388,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BDDCC87283C807600632526 /* Build configuration list for PBXNativeTarget "AirbnbUITests" */;
 			buildPhases = (
+				6D1EBAF8B58DD205FDD68BC8 /* [CP] Check Pods Manifest.lock */,
 				5BDDCC73283C807600632526 /* Sources */,
 				5BDDCC74283C807600632526 /* Frameworks */,
 				5BDDCC75283C807600632526 /* Resources */,
@@ -427,6 +471,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		345E733DA513C6E6AD6D3F01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirbnbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D1EBAF8B58DD205FDD68BC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Airbnb-AirbnbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75171177A3244DB382C0A352 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Airbnb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BDDCC53283C807300632526 /* Sources */ = {
@@ -626,6 +739,7 @@
 		};
 		5BDDCC82283C807600632526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD7BB982D9F6B695F3340396 /* Pods-Airbnb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -654,6 +768,7 @@
 		};
 		5BDDCC83283C807600632526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34326D6057B598B251117DDB /* Pods-Airbnb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -682,6 +797,7 @@
 		};
 		5BDDCC85283C807600632526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9CF2A333DC2BEA8B60797C1 /* Pods-AirbnbTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -702,6 +818,7 @@
 		};
 		5BDDCC86283C807600632526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C4BFBD34C93AC24288AC74F /* Pods-AirbnbTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -722,6 +839,7 @@
 		};
 		5BDDCC88283C807600632526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93B12CCFE280F4B29F2101AE /* Pods-Airbnb-AirbnbUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -740,6 +858,7 @@
 		};
 		5BDDCC89283C807600632526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83A8635572966C86A84A9627 /* Pods-Airbnb-AirbnbUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
