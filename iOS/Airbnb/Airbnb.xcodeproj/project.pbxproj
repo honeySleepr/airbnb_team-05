@@ -14,6 +14,7 @@
 		5B06C2E7284081EC009F4CD4 /* HomeViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E6284081EC009F4CD4 /* HomeViewDataSource.swift */; };
 		5B06C2EA2840896C009F4CD4 /* NearbyDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */; };
 		5B06C2EC2840899B009F4CD4 /* LivingSpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */; };
+		5B0BFD2C284DAD9F00BA1AD0 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BFD2B284DAD9F00BA1AD0 /* SearchListViewController.swift */; };
 		5B4725622845ACC000A115A7 /* FavoriteSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */; };
 		5B4725642845B59200A115A7 /* TumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725632845B59200A115A7 /* TumbnailCell.swift */; };
 		5B4725672845BA3200A115A7 /* heartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4725662845BA3200A115A7 /* heartButton.swift */; };
@@ -62,6 +63,7 @@
 		5B06C2E6284081EC009F4CD4 /* HomeViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataSource.swift; sourceTree = "<group>"; };
 		5B06C2E92840896C009F4CD4 /* NearbyDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationCell.swift; sourceTree = "<group>"; };
 		5B06C2EB2840899B009F4CD4 /* LivingSpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingSpotCell.swift; sourceTree = "<group>"; };
+		5B0BFD2B284DAD9F00BA1AD0 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		5B4725612845ACC000A115A7 /* FavoriteSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSpotView.swift; sourceTree = "<group>"; };
 		5B4725632845B59200A115A7 /* TumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbnailCell.swift; sourceTree = "<group>"; };
 		5B4725662845BA3200A115A7 /* heartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heartButton.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				5B06C2DA283F18A2009F4CD4 /* Container */,
 				5B06C2DF283F5181009F4CD4 /* TabBarItemViewController */,
+				5B0BFD2B284DAD9F00BA1AD0 /* SearchListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				5B06C2E1283F5887009F4CD4 /* AdvertisingCell.swift in Sources */,
 				5B06C2DE283F4C92009F4CD4 /* CollectionHeaderView.swift in Sources */,
 				5B06C2EA2840896C009F4CD4 /* NearbyDestinationCell.swift in Sources */,
+				5B0BFD2C284DAD9F00BA1AD0 /* SearchListViewController.swift in Sources */,
 				5B4725672845BA3200A115A7 /* heartButton.swift in Sources */,
 				5B4725622845ACC000A115A7 /* FavoriteSpotView.swift in Sources */,
 				5BDDCC93283C9D9800632526 /* HomeView.swift in Sources */,
