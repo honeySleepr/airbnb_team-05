@@ -22,13 +22,9 @@ public class BnbSimpleDto {
 		this.reviewCount = bnb.getReviewCount();
 		this.bnbName = bnb.getName();
 		this.fee = bnb.getFee();
-		if (searchQueryDto.getCheckIn() == null) {
-			this.totalFee = 7 * bnb.getFee();
-		} else {
-			Period stayPeriod = Period.between(searchQueryDto.getCheckIn(),
-				searchQueryDto.getCheckOut());
-			this.totalFee = stayPeriod.getDays() * bnb.getFee();
-		}
+		Period stayPeriod = Period.between(searchQueryDto.getCheckIn(),
+			searchQueryDto.getCheckOut());
+		this.totalFee = stayPeriod.getDays() * bnb.getFee();
 	}
 
 }

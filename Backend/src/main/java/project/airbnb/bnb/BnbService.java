@@ -32,14 +32,16 @@ public class BnbService {
 		return new BnbDetailDto(bnb, isWish);
 	}
 
-	public BnbSearchResponse<List<BnbSimpleDto>> showSearchBnbs(SearchQueryDto searchQueryDto,
-		Pageable pageable) {
-		Page<Bnb> page = bnbRepository.search(searchQueryDto, pageable);
+	public BnbSearchResponse<List<BnbSimpleDto>> showSearchBnbs(
+		SearchQueryDto validatedSearchQueryDto, Pageable pageable) {
+
+		Page<Bnb> page = bnbRepository.search(validatedSearchQueryDto, pageable);
 
 		List<BnbSimpleDto> dtos = page.getContent().stream()
-			.map(bnb -> new BnbSimpleDto(bnb, searchQueryDto))
+			.map(bnb -> new BnbSimpleDto(bnb, validatedSearchQueryDto))
 			.collect(Collectors.toList());
 
-		return new BnbSearchResponse<>(searchQueryDto, page, dtos);
+		return new BnbSearchResponse<>(validatedSearchQueryDto, page, dtos);
 	}
+
 }

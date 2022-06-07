@@ -22,15 +22,14 @@ public class BnbSearchResponse<T> {
 
 	public BnbSearchResponse(SearchQueryDto dto, Page page, T data) {
 		this.searchLocation = dto.getSearchLocation();
-		this.checkIn = dto.getCheckIn() == null ? LocalDate.now() : dto.getCheckIn();
-		this.checkOut = dto.getCheckOut() == null ? LocalDate.now().plusDays(7) : dto.getCheckOut();
-		this.guestNumber = dto.getGuestNumber() == null ? 1 : dto.getGuestNumber();
+		this.checkIn = dto.getCheckIn();
+		this.checkOut = dto.getCheckOut();
+		this.guestNumber = dto.getGuestNumber();
 		this.count = page.getTotalElements();
 		this.isLast = page.isLast();
 		this.pageSize = page.getSize();
 		this.pageNumber = page.getNumber();
 		this.data = data;
 	}
-
 
 }
