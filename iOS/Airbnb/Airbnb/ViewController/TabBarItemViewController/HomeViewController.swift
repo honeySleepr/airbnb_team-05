@@ -25,14 +25,21 @@ class HomeViewController: UIViewController, UISearchResultsUpdating {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.automaticallyShowsCancelButton = false
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
         self.navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController = searchController
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        
+        guard let text = searchController.searchBar.text else { return }
+    }
+    
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        let searchListViewController = SearchListViewController()
+        navigationController?.pushViewController(searchListViewController, animated: true)
+        searchBar.resignFirstResponder()
     }
 }
