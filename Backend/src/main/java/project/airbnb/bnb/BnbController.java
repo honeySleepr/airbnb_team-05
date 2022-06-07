@@ -2,6 +2,7 @@ package project.airbnb.bnb;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,11 +29,9 @@ public class BnbController {
 
 	@GetMapping("/api/bnbs")
 	public BnbSearchResponse<List<BnbSimpleDto>> showSearchBnbs(@Validated
-		SearchQueryDto searchQueryDto) {
+		SearchQueryDto searchQueryDto, Pageable pageable) {
 
-		bnbService.showSearchBnbs(searchQueryDto);
-
-		return null;
+		return bnbService.showSearchBnbs(searchQueryDto, pageable);
 	}
 
 }
