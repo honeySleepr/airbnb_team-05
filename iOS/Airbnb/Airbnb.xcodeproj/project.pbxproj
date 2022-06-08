@@ -29,6 +29,7 @@
 		5B86C6DE284F33D900CC8514 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86C6DD284F33D900CC8514 /* SearchViewCell.swift */; };
 		5B86C6E1284F37C100CC8514 /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86C6E0284F37C100CC8514 /* SearchViewDataSource.swift */; };
 		5B86C6E3284F439000CC8514 /* SearchViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86C6E2284F439000CC8514 /* SearchViewLayout.swift */; };
+		5BC0EAA628504B3A00BCFFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BC0EAA528504B3A00BCFFF8 /* SnapKit */; };
 		5BDBAB2428473D7D00A3243D /* FavoriteSpotViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBAB2328473D7D00A3243D /* FavoriteSpotViewDataSource.swift */; };
 		5BDDCC5B283C807300632526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5A283C807300632526 /* AppDelegate.swift */; };
 		5BDDCC5D283C807300632526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDCC5C283C807300632526 /* SceneDelegate.swift */; };
@@ -117,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C9D57059E094B3EA2556D6C /* Pods_Airbnb.framework in Frameworks */,
+				5BC0EAA628504B3A00BCFFF8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +151,6 @@
 				B9CF2A333DC2BEA8B60797C1 /* Pods-AirbnbTests.debug.xcconfig */,
 				0C4BFBD34C93AC24288AC74F /* Pods-AirbnbTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -361,6 +362,9 @@
 			dependencies = (
 			);
 			name = Airbnb;
+			packageProductDependencies = (
+				5BC0EAA528504B3A00BCFFF8 /* SnapKit */,
+			);
 			productName = Airbnb;
 			productReference = 5BDDCC57283C807300632526 /* Airbnb.app */;
 			productType = "com.apple.product-type.application";
@@ -435,6 +439,9 @@
 				Base,
 			);
 			mainGroup = 5BDDCC4E283C807300632526;
+			packageReferences = (
+				5BC0EAA428504B3A00BCFFF8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5BDDCC58283C807300632526 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -915,6 +922,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BC0EAA428504B3A00BCFFF8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BC0EAA528504B3A00BCFFF8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BC0EAA428504B3A00BCFFF8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BDDCC4F283C807300632526 /* Project object */;
 }
