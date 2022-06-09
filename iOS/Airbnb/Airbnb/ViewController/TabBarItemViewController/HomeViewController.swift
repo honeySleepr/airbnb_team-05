@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UISearchResultsUpdating {
     }
     
     private func searchBarController() {
-        let searchController = UISearchController(searchResultsController: SearchListViewController())
+        let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "어디로 여행가세요?"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.automaticallyShowsCancelButton = false

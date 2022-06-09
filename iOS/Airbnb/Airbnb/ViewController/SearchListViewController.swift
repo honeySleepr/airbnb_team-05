@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MapKit
 
 class SearchListViewController: UIViewController {
     
@@ -21,7 +20,7 @@ class SearchListViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        let searchController = UISearchController()
+        let searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.automaticallyShowsCancelButton = false
@@ -31,4 +30,12 @@ class SearchListViewController: UIViewController {
         navigationItem.searchController?.searchBar.placeholder = "어디로 여행가세요?"
     }
     
+}
+
+extension SearchListViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        let locationViewController = LocationTableViewController()
+        navigationController?.pushViewController(locationViewController, animated: true)
+        searchBar.resignFirstResponder()
+    }
 }
