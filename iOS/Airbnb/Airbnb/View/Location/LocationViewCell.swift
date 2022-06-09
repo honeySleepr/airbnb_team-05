@@ -58,6 +58,7 @@ final class LocationViewCell: UITableViewCell {
         
         locationTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            locationTitle.topAnchor.constraint(equalTo: contentView.topAnchor),
             locationTitle.leadingAnchor.constraint(equalTo: locationImage.trailingAnchor, constant: 20),
             locationTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])

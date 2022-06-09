@@ -21,15 +21,16 @@ class SearchListViewController: UIViewController {
     
     private func setNavigationBar() {
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "어디로 여행가세요?"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.automaticallyShowsCancelButton = false
+        searchController.searchBar.delegate = self
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.title = "숙소 찾기"
         navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.placeholder = "어디로 여행가세요?"
     }
-    
+
 }
 
 extension SearchListViewController: UISearchBarDelegate {
@@ -38,4 +39,5 @@ extension SearchListViewController: UISearchBarDelegate {
         navigationController?.pushViewController(locationViewController, animated: true)
         searchBar.resignFirstResponder()
     }
+    
 }

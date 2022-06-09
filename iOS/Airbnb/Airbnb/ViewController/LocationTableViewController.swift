@@ -8,37 +8,44 @@
 import UIKit
 import MapKit
 
-final class LocationTableViewController: UIViewController {
+final class LocationTableViewController: UIViewController, UITableViewDelegate {
     
     private var searchCompleter = MKLocalSearchCompleter()      // 검색을 도와주는 변수
     private var searchResults = [MKLocalSearchCompletion]()     // 검색 결과를 담는 변수
     private var searchRegion = MKCoordinateRegion(MKMapRect.world) // 검색 지역 범위를 결정하는 변수
     
+    private var locationView = LocationView()
+    private var locationDatasource = LocationViewDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        setNavigationBar()
         setupSearchCompleter()
+        self.view = locationView
+        locationView.delegate = self
+        locationView.dataSource = locationDatasource
+    }
+    
+    private func setNavigationBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "어디로 여행가세요?"
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.automaticallyShowsCancelButton = false
+        searchController.searchBar.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.title = "숙소 찾기"
+        navigationItem.searchController = searchController
     }
     
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.becomeFirstResponder()
+        searchBar.keyboardAppearance = .dark
+        searchBar.showsCancelButton = false
         searchBar.placeholder = "어디로 여행가세요?"
         return searchBar
     }()
-    
-    let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .yellow
-        return tableView
-    }()
-    
-    func setupLocationTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(LocationViewCell.self, forCellReuseIdentifier: LocationViewCell.identifier)
-        tableView.separatorStyle = .none
-    }
     
 }
 
@@ -52,7 +59,8 @@ extension LocationTableViewController: MKLocalSearchCompleterDelegate {
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
-        // locationView.tableView.reloadData()
+//         locationView.tableView.reloadData()
+        locationView.reloadData()
     }
 }
 
