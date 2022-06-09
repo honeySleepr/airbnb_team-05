@@ -39,6 +39,10 @@ final class LocationViewCell: UITableViewCell {
         return locationTitle
     }()
     
+    func configure(location: String?) {
+        locationTitle.text = location
+    }
+    
     private func appendSubView() {
         contentView.addSubview(locationImage)
         contentView.addSubview(locationTitle)
