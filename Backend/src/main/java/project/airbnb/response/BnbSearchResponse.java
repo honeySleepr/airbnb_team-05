@@ -3,6 +3,8 @@ package project.airbnb.response;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.data.domain.Page;
+import project.airbnb.bnb.dto.SearchQueryDto;
 
 @Getter
 @AllArgsConstructor
@@ -12,8 +14,26 @@ public class BnbSearchResponse<T> {
 	private LocalDate checkIn;
 	private LocalDate checkOut;
 	private Integer guestNumber;
-	private Integer count;
+	private Integer minFee;
+	private Integer maxFee;
+	private Long count;
+	private Boolean isLast;
+	private Integer pageSize;
+	private Integer pageNumber;
 	private T data;
 
-	// Todo : 생성자
+	public BnbSearchResponse(SearchQueryDto dto, Page page, T data) {
+		this.searchLocation = dto.getSearchLocation();
+		this.checkIn = dto.getCheckIn();
+		this.checkOut = dto.getCheckOut();
+		this.guestNumber = dto.getGuestNumber();
+		this.minFee = dto.getMinFee();
+		this.maxFee = dto.getMaxFee();
+		this.count = page.getTotalElements();
+		this.isLast = page.isLast();
+		this.pageSize = page.getSize();
+		this.pageNumber = page.getNumber();
+		this.data = data;
+	}
+
 }

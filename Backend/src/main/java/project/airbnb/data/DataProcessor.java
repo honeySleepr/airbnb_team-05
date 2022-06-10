@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -32,6 +31,7 @@ public class DataProcessor {
 	public static final String RESOURCE_PATH = "src/main/resources/";
 	public static final String GEOCODE_URL = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query=";
 	public static final String S3_IMAGE_URL = "http://S3dummy.com/";
+	public final Random random = new Random(System.currentTimeMillis());
 
 	public final String clientId;
 	public final String clientSecret;
@@ -61,19 +61,19 @@ public class DataProcessor {
 		this.clientSecret = clientSecret;
 		this.bnbRepository = bnbRepository;
 	}
-
-	@PostConstruct
-	public void action() {
-		// 필요 시에만 사용하려고 만든 것
-		//		try {
-		//						createXYCsv();
-		//						saveDummyBnb();
-		//						createInitDataFile();
-		//		} catch (IOException e) {
-		//			log.debug("파일 경로 확인. 지정 경로 : {}", RESOURCE_PATH);
-		//			e.printStackTrace();
-		//		}
-	}
+	// 필요 시에만 사용하려고 만든 것
+	//	@PostConstruct
+	//	public void action() {
+	//
+	//		try {
+	//			createXYCsv();
+	//			saveDummyBnb();
+	//			createInitDataFile();
+	//		} catch (IOException e) {
+	//			log.debug("파일 경로 확인. 지정 경로 : {}", RESOURCE_PATH);
+	//			e.printStackTrace();
+	//		}
+	//	}
 
 	private void createInitDataFile() throws IOException {
 		FileInputStream file = new FileInputStream(RESOURCE_PATH + "hotel_data.xlsx");
@@ -82,7 +82,6 @@ public class DataProcessor {
 			sheet = workbook.getSheetAt(0);
 		}
 
-		Random random = new Random();
 		List<String[]> data = new ArrayList<>();
 
 		for (int i = 3; i < sheet.getLastRowNum() + 1; i++) {
@@ -101,7 +100,8 @@ public class DataProcessor {
 				String.valueOf(1 + random.nextInt(2)),
 				"'" + String.valueOf(BnbType.values()[random.nextInt(3)]) + "'",
 				"'" + description.get(random.nextInt(description.size())) + "'",
-				String.valueOf(10_000 + 1000L * random.nextInt(991)),
+				String.valueOf((int) Math.round(nextSkewedBoundedDouble(10000, 1000000, 1, -1.5))
+							   / 1000 * 1000),
 				"'" + host.get(random.nextInt(host.size())) + "'",
 				String.valueOf(2 + random.nextInt(5)),
 				String.valueOf(3 + (Math.round(random.nextInt(21) * 0.1 * 10) / 10d)),
@@ -111,7 +111,7 @@ public class DataProcessor {
 			});
 		}
 
-		File initDataFile = new File(RESOURCE_PATH + "bnbInitData.csv");
+		File initDataFile = new File(RESOURCE_PATH + "bnbInitData_v2.csv");
 		try (PrintWriter pw = new PrintWriter(initDataFile)) {
 			data.stream()
 				.map(this::convertToCSV)
@@ -122,6 +122,17 @@ public class DataProcessor {
 	public String convertToCSV(String[] data) {
 		return Stream.of(data)
 			.collect(Collectors.joining(",", "(", ")"));
+	}
+
+	// 정규분포 데이터 생성
+	private double nextSkewedBoundedDouble(double min, double max, double skew, double bias) {
+		double range = max - min;
+		double mid = min + range / 2.0;
+		double unitGaussian = random.nextGaussian();
+		double biasFactor = Math.exp(bias);
+		double retval =
+			mid + (range * (biasFactor / (biasFactor + Math.exp(-unitGaussian / skew)) - 0.5));
+		return retval;
 	}
 
 	// Naver API를 이용해 주소를 위/경도로 변환하여 CSV 파일에 저장한다
