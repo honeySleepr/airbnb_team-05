@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchListViewController: UIViewController {
+class SearchListViewController: UIViewController, UISearchBarDelegate {
     
     private var searchView = SearchView()
     private var datasource = SearchViewDataSource()
@@ -20,7 +20,7 @@ class SearchListViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        let searchController = UISearchController(searchResultsController: nil)
+        let searchController = UISearchController(searchResultsController: LocationTableViewController())
         searchController.searchBar.placeholder = "어디로 여행가세요?"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
@@ -31,13 +31,4 @@ class SearchListViewController: UIViewController {
         navigationItem.searchController = searchController
     }
 
-}
-
-extension SearchListViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        let locationViewController = LocationTableViewController()
-        navigationController?.pushViewController(locationViewController, animated: true)
-        searchBar.resignFirstResponder()
-    }
-    
 }

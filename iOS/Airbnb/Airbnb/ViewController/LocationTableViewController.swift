@@ -19,34 +19,13 @@ final class LocationTableViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
         setupSearchCompleter()
         self.view = locationView
         locationView.delegate = self
         locationView.dataSource = locationDatasource
     }
     
-    private func setNavigationBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "어디로 여행가세요?"
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.automaticallyShowsCancelButton = false
-        searchController.searchBar.delegate = self
-        navigationItem.hidesSearchBarWhenScrolling = false
-        navigationItem.title = "숙소 찾기"
-        navigationItem.searchController = searchController
-    }
-    
-    let searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.becomeFirstResponder()
-        searchBar.keyboardAppearance = .dark
-        searchBar.showsCancelButton = false
-        searchBar.placeholder = "어디로 여행가세요?"
-        return searchBar
-    }()
-    
+   
 }
 
 extension LocationTableViewController: MKLocalSearchCompleterDelegate {
