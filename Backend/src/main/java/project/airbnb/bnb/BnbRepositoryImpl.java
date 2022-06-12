@@ -1,8 +1,5 @@
 package project.airbnb.bnb;
 
-import static project.airbnb.bnb.QBnb.bnb;
-import static project.airbnb.reservation.QReservation.reservation;
-
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -10,6 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import project.airbnb.bnb.dto.SearchQueryDto;
+
+import static project.airbnb.bnb.QBnb.bnb;
+import static project.airbnb.reservation.QReservation.reservation;
 
 public class BnbRepositoryImpl implements BnbRepositoryCustom {
 
