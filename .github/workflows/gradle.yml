@@ -1,0 +1,39 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+# Github Actions에서 java 검색 시 조회되는 기본 workflow 중 하나
+name: GitHub workflow - Java with Gradle
+
+on:
+  push:
+    branches: [ "deploy" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # 기본 경로 지정 https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrun
+    defaults:
+      run:
+        working-directory: ./Backend
+        
+    steps:
+#     현재 커밋의 소스파일을 깃헙 서버로 가져온다
+    - name: Checkout to current branch
+      uses: actions/checkout@v3
+#     깃헙 서버에 JDK11 설치
+    - name: Install JDK11
+      uses: actions/setup-java@v3
+      with:
+        java-versi: '11'
+        distribution: 'temurin'
+        
+#     깃헙에서 테스트가 돌아가게 하려면 어떻게 해야하지? 일단은 안돼서 build 대신 bootJar로 변경
+    - name: Build with Gradle
+      run: ./gradlew bootJar
