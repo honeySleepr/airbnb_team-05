@@ -66,3 +66,8 @@ configurations {
     }
     querydsl.extendsFrom compileClasspath
 }
+
+// build 시에 plain jar 파일이 생성되지 않도록 한다
+//jar {
+//    enabled = false
+//}
